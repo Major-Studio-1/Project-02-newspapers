@@ -1,0 +1,1363 @@
+{
+  "schema_version": "1.0",
+  "title": "报纸中的关系：1793—1800年证据试点",
+  "created_date": "2026-10-30",
+  "language": "zh-CN",
+  "dataset": {
+    "name": "RevolutionCrossroads/loc_chronicling_america_1770-1810",
+    "revision": "0b97906ad32e269376872934820357fc333151d8",
+    "url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810"
+  },
+  "method": {
+    "purpose": "验证可否从历史报纸中保存可追溯的议题关系；不估计社会注意力总量或真实因果效应。",
+    "pilot_pages": 800,
+    "pilot_passages": 9670,
+    "candidate_count": 48,
+    "retained_count": 15,
+    "adjacency_rejection_examples": 4,
+    "sample": "沿用既有试点每年100页的样本，1793—1800年共800页；每年优先覆盖不同报纸系列。这不是该时段全部报纸，也不是全部相关文章。",
+    "retrieval": "用既有24主题模型检索航运、欧洲／军事、政治三组的两两组合；逐年每组取2个不同页面，共48个候选。检索分数仅用于寻找材料，不是关系强度或证据概率。",
+    "selection": "有目的地选择15条明确表达关系、可查看扫描的案例；保留4个文章相邻造成共现的反例，其余29条仅初筛。不能用15/48估计检索准确率。",
+    "normalization": "英文摘引来自RevX转写；合并空白及断行连字符，不作静默拼写修订。关键处对照公开扫描，错误另作说明。",
+    "scan_review": "由本次助手逐条检查支持关系的扫描段落及页面转写上下文；属于研究初步核查，尚未经独立第二位研究者复核。",
+    "graph": "7个议题类别是本试点人工编组；每条关系保留独立记录。箭头表达原文中的关系方向，不代表经过检验的因果方向。图中线宽与节点大小不编码频率或影响力。",
+    "dates": "时间线使用刊载日期；事件、来信、消息来源日期另存。未将模糊或共和历日期强行换算。",
+    "independence": "同一报道可能经过转载；本轮尚未做跨报转载去重与独立来源认定。记录数不等于独立证据数。"
+  },
+  "categories": [
+    {
+      "id": "seizure",
+      "label": "扣船与贸易限制",
+      "short": "扣船／限制"
+    },
+    {
+      "id": "commerce",
+      "label": "商人与航运回应",
+      "short": "商人／航运"
+    },
+    {
+      "id": "diplomacy",
+      "label": "外交谈判与条约",
+      "short": "外交／条约"
+    },
+    {
+      "id": "military",
+      "label": "军事行动与战备",
+      "short": "军事／战备"
+    },
+    {
+      "id": "politics",
+      "label": "政治论证与阵营",
+      "short": "政治／阵营"
+    },
+    {
+      "id": "institutions",
+      "label": "法令与制度建设",
+      "short": "法令／制度"
+    },
+    {
+      "id": "information",
+      "label": "消息传播与质疑",
+      "short": "传播／质疑"
+    }
+  ],
+  "records": [
+    {
+      "candidate_id": "C04",
+      "from_id": "commerce",
+      "to_id": "seizure",
+      "title": "赔偿责任被期待能约束私掠船",
+      "relation": "作者预期：赔偿会抑制扣船",
+      "claim": "利物浦来信称，英国私掠船主因扣押美国船只及美国财产而承担滞留赔偿；写信人因此预期，他们会更谨慎地干扰美国贸易。",
+      "speaker": "利物浦的一位美国来信人（匿名）",
+      "evidence_kind": "作者判断",
+      "publication_date": "1793-11-12",
+      "event_dates": [
+        {
+          "as_printed": "A letter of Aug. 16",
+          "meaning": "来信日期；原文此处未写年份",
+          "iso": null
+        }
+      ],
+      "source_chain": [
+        "利物浦来信：8月16日",
+        "巴尔的摩消息栏：10月24日",
+        "本报刊载：1793-11-12"
+      ],
+      "excerpts": [
+        "The owners of British privateers are considerable sufferers by their Captains capturing American vessels, with American property; they have been obliged to compensate for the detention: It will make them cautious how they interrupt our Commerce."
+      ],
+      "limitations": "这是对未来行为的推断。该信没有提供扣船次数或赔偿裁决，不能据此认定扣船已经减少。",
+      "review": {
+        "status": "已核对相关扫描段落",
+        "scope": "核对支持本条关系的关键句和文章上下文；未逐字校勘整页。",
+        "legibility": "关键句清楚",
+        "ocr_notes": [],
+        "historical_causality_verified": false,
+        "independent_corroboration": false
+      },
+      "source": {
+        "newspaper_title": "The American herald of liberty",
+        "lccn": "sn84023134",
+        "place": "Exeter, N.H.",
+        "page": 3,
+        "edition": 1,
+        "page_key": "sn84023134|1793-11-12|1|3",
+        "issue_url": "https://www.loc.gov/item/sn84023134/1793-11-12/ed-1/",
+        "loc_pdf_url": "https://tile.loc.gov/storage-services/service/ndnp/nhd/batch_nhd_avocet_ver01/data/sn84023134/00517015908/1793111201/0107.pdf",
+        "pinned_scan_url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810/resolve/0b97906ad32e269376872934820357fc333151d8/media/sn84023134/1793-11-12_1_3.pdf?download=true",
+        "pdf_sha256": "e1b8e450c41064b14a1a127153ec86cf2e09670e337ce70a2c4918a6bfbaf7f6",
+        "text_source": "RevX"
+      },
+      "retrieval": {
+        "candidate_pair": [
+          "shipping",
+          "politics"
+        ],
+        "score": 0.28633347153663635,
+        "global_passage_index": 31756,
+        "page_index": 2689,
+        "passage_index": 2,
+        "parquet_file": "train-00003-of-00006.parquet",
+        "parquet_row": 5520
+      },
+      "id": "R01",
+      "text_relation_explicit": true,
+      "historical_event_id": null
+    },
+    {
+      "candidate_id": "C11",
+      "from_id": "seizure",
+      "to_id": "diplomacy",
+      "title": "商业受损进入外交索赔交涉",
+      "relation": "商业投诉引出使节回应",
+      "claim": "报纸刊载的Fauchet致Randolph信件，将美国商人的扣船、侵扰投诉与法国政府处理索赔的承诺联系起来。",
+      "speaker": "法国使节JH: Fauchet；本报刊载英文译文",
+      "evidence_kind": "刊载文件",
+      "publication_date": "1794-04-26",
+      "event_dates": [
+        {
+          "as_printed": "the 7th Germinal, 2d year of the French Republic",
+          "meaning": "信件署期；保留法国共和历，未换算",
+          "iso": null
+        }
+      ],
+      "source_chain": [
+        "法国使节致美国国务卿的信",
+        "标为TRANSLATION的英文版本",
+        "本报刊载：1794-04-26"
+      ],
+      "excerpts": [
+        "AS you are about to lay before the President a statement of the claims relative to the vexations and spoliations which your commerce has experienced, you will doubtless receive with pleasure some éclaircissement on the complaints, well or ill founded, which have been brought against privateers, and two ships of war of the French Republic. You will not observe with less pleasure in my reply, that the National Convention has already done justice to some of the demands of the merchants of the United States, and are now occupied in satisfying some others."
+      ],
+      "limitations": "信中的“已处理部分请求”是法国使节的陈述；未查索赔名册、裁决或实际付款。法文原件与译文一致性未独立核对。",
+      "review": {
+        "status": "已核对相关扫描段落",
+        "scope": "核对支持本条关系的关键句和文章上下文；未逐字校勘整页。",
+        "legibility": "关键句与署名清楚",
+        "ocr_notes": [],
+        "historical_causality_verified": false,
+        "independent_corroboration": false
+      },
+      "source": {
+        "newspaper_title": "The New Hampshire gazette",
+        "lccn": "sn83025588",
+        "place": "Portsmouth [N.H.]",
+        "page": 1,
+        "edition": 1,
+        "page_key": "sn83025588|1794-04-26|1|1",
+        "issue_url": "https://www.loc.gov/item/sn83025588/1794-04-26/ed-1/",
+        "loc_pdf_url": "https://tile.loc.gov/storage-services/service/ndnp/nhd/batch_nhd_avalon_ver02/data/sn83025588/00517010753/1794042601/0217.pdf",
+        "pinned_scan_url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810/resolve/0b97906ad32e269376872934820357fc333151d8/media/sn83025588/1794-04-26_1_1.pdf?download=true",
+        "pdf_sha256": "1de7c90352e4429746d8c11dcacf7675cf662406dd048bf055c3c077a7e9f941",
+        "text_source": "RevX"
+      },
+      "retrieval": {
+        "candidate_pair": [
+          "europe",
+          "politics"
+        ],
+        "score": 0.46399402618408203,
+        "global_passage_index": 19145,
+        "page_index": 1772,
+        "passage_index": 1,
+        "parquet_file": "train-00001-of-00006.parquet",
+        "parquet_row": 8644
+      },
+      "id": "R02",
+      "text_relation_explicit": true,
+      "historical_event_id": null
+    },
+    {
+      "candidate_id": "C10",
+      "from_id": "institutions",
+      "to_id": "commerce",
+      "title": "禁运中的特定航线获得有条件放行",
+      "relation": "法规设定航运例外",
+      "claim": "刊载的决议授权总统允许已装货、驶往好望角以外港口的美国船只领取放行许可，前提是船主担保途中不提前卸货。",
+      "speaker": "报纸所刊决议；署George Washington批准",
+      "evidence_kind": "刊载文件",
+      "publication_date": "1794-05-20",
+      "event_dates": [
+        {
+          "as_printed": "Approved, May 7, 1794",
+          "meaning": "决议批准日（按刊载文本）",
+          "iso": "1794-05-07"
+        }
+      ],
+      "source_chain": [
+        "费城消息：5月7日",
+        "决议及批准署名",
+        "本报刊载：1794-05-20"
+      ],
+      "excerpts": [
+        "Resolved, That the President of the United States be authorized to direct clearances to be granted to any ship or vessel, belonging to citizens of the United States, which are now loaded, bound from any port in the United States, for any port beyond the Cape of Good Hope; any thing in the resolution for laying the Embargo, to the contrary notwithstanding: Provided , That before the Collector of either of the districts of the United States, shall grant clearances, or any such vessel shall sail, the owners thereof shall give sufficient security to the satisfaction of such collector, that she shall not unlade her cargo, or any part thereof, at any port or place, previous to her arrival at the Cape of Good Hope."
+      ],
+      "limitations": "可以识别规则及条件，但本条没有记录哪些船只实际获得许可，也不说明禁运整体效果。此为1794年的措施。",
+      "review": {
+        "status": "已核对相关扫描段落",
+        "scope": "核对支持本条关系的关键句和文章上下文；未逐字校勘整页。",
+        "legibility": "核心条款清楚；批准日期取自本页转写",
+        "ocr_notes": [],
+        "historical_causality_verified": false,
+        "independent_corroboration": false
+      },
+      "source": {
+        "newspaper_title": "The New Hampshire gazette",
+        "lccn": "sn83025588",
+        "place": "Portsmouth [N.H.]",
+        "page": 3,
+        "edition": 1,
+        "page_key": "sn83025588|1794-05-20|1|3",
+        "issue_url": "https://www.loc.gov/item/sn83025588/1794-05-20/ed-1/",
+        "loc_pdf_url": "https://tile.loc.gov/storage-services/service/ndnp/nhd/batch_nhd_avalon_ver02/data/sn83025588/00517010753/1794052001/0231.pdf",
+        "pinned_scan_url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810/resolve/0b97906ad32e269376872934820357fc333151d8/media/sn83025588/1794-05-20_1_3.pdf?download=true",
+        "pdf_sha256": "3324b7c81b55fffa8539857895a74237d8712088f9c1d7a4e48b3d67fb23b5af",
+        "text_source": "RevX"
+      },
+      "retrieval": {
+        "candidate_pair": [
+          "shipping",
+          "politics"
+        ],
+        "score": 0.38044047355651855,
+        "global_passage_index": 19161,
+        "page_index": 1773,
+        "passage_index": 4,
+        "parquet_file": "train-00001-of-00006.parquet",
+        "parquet_row": 8658
+      },
+      "id": "R03",
+      "text_relation_explicit": true,
+      "historical_event_id": null
+    },
+    {
+      "candidate_id": "C15",
+      "from_id": "military",
+      "to_id": "seizure",
+      "title": "海军物资需求与商人物资征用相连",
+      "relation": "报道国家征用商人物资",
+      "claim": "Ship News栏的一则到港消息称，南特为国家需要征用海军物资，持有这些物资的商人被取走相关货物。",
+      "speaker": "Freedom号船长Griffin带回的消息，由报纸转述",
+      "evidence_kind": "报道行动",
+      "publication_date": "1795-02-06",
+      "event_dates": [
+        {
+          "as_printed": "in 42 days from Nantz; For 20 days prior to her sailing",
+          "meaning": "航程与离港前禁运的相对时间；征用未给确切日期",
+          "iso": null
+        }
+      ],
+      "source_chain": [
+        "来自南特的船长消息",
+        "Ship News栏",
+        "本报刊载：1795-02-06"
+      ],
+      "excerpts": [
+        "All sorts of naval stores being in requisition for the use of the nation, they were taken from every merchant at Nantz, who possessed them."
+      ],
+      "limitations": "物资需求与征用在原文中直接相连；同段还提到禁运，但没有足够证据认定征用就是禁运的原因。未核实征用规模或补偿。",
+      "review": {
+        "status": "已核对相关扫描段落",
+        "scope": "核对支持本条关系的关键句和文章上下文；未逐字校勘整页。",
+        "legibility": "关键句清楚",
+        "ocr_notes": [],
+        "historical_causality_verified": false,
+        "independent_corroboration": false
+      },
+      "source": {
+        "newspaper_title": "The Mirrour",
+        "lccn": "sn83025523",
+        "place": "Concord, N.H.",
+        "page": 2,
+        "edition": 1,
+        "page_key": "sn83025523|1795-02-06|1|2",
+        "issue_url": "https://www.loc.gov/item/sn83025523/1795-02-06/ed-1/",
+        "loc_pdf_url": "https://tile.loc.gov/storage-services/service/ndnp/nhd/batch_nhd_eider_ver01/data/sn83025523/00541315834/1795020601/0413.pdf",
+        "pinned_scan_url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810/resolve/0b97906ad32e269376872934820357fc333151d8/media/sn83025523/1795-02-06_1_2.pdf?download=true",
+        "pdf_sha256": "731462c66f98699ac3bcde40c7ec49908f07fce5ce353338209f61884ebfffa5",
+        "text_source": "RevX"
+      },
+      "retrieval": {
+        "candidate_pair": [
+          "shipping",
+          "politics"
+        ],
+        "score": 0.34864458441734314,
+        "global_passage_index": 12799,
+        "page_index": 1135,
+        "passage_index": 4,
+        "parquet_file": "train-00001-of-00006.parquet",
+        "parquet_row": 2577
+      },
+      "id": "R04",
+      "text_relation_explicit": true,
+      "historical_event_id": null
+    },
+    {
+      "candidate_id": "C24",
+      "from_id": "military",
+      "to_id": "diplomacy",
+      "title": "法国政府把继续作战说成和平的前提",
+      "relation": "官方论证：以作战取得和平",
+      "claim": "刊载的督政府咨文声称，只有让敌人无法继续其计划才能取得和平，并把和平与接下来的一场有力战役联系起来。",
+      "speaker": "法国督政府向元老院提交的咨文（报纸刊载版本）",
+      "evidence_kind": "作者判断",
+      "publication_date": "1796-04-04",
+      "event_dates": [
+        {
+          "as_printed": "delivered January 24",
+          "meaning": "咨文提交日；此处未明写年份",
+          "iso": null
+        }
+      ],
+      "source_chain": [
+        "督政府咨文：1月24日",
+        "French Affairs栏",
+        "本报刊载：1796-04-04"
+      ],
+      "excerpts": [
+        "The French ought to know that they will not have peace with their enemies, until they shall have rendered it impossible for them to pursue their disastrous project. The epoch is not far off; it must be the consequence of a vigorous campaign,"
+      ],
+      "limitations": "记录的是官方对战争与和平的论证，不能把它当作战争实际促成和平的证明。",
+      "review": {
+        "status": "已核对相关扫描段落",
+        "scope": "核对支持本条关系的关键句和文章上下文；未逐字校勘整页。",
+        "legibility": "关键句清楚",
+        "ocr_notes": [],
+        "historical_causality_verified": false,
+        "independent_corroboration": false
+      },
+      "source": {
+        "newspaper_title": "The Eagle, or, Dartmouth centinel",
+        "lccn": "sn84023150",
+        "place": "Hanover, N.H.",
+        "page": 2,
+        "edition": 1,
+        "page_key": "sn84023150|1796-04-04|1|2",
+        "issue_url": "https://www.loc.gov/item/sn84023150/1796-04-04/ed-1/",
+        "loc_pdf_url": "https://tile.loc.gov/storage-services/service/ndnp/nhd/batch_nhd_eider_ver01/data/sn84023150/0054131474A/1796040401/0062.pdf",
+        "pinned_scan_url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810/resolve/0b97906ad32e269376872934820357fc333151d8/media/sn84023150/1796-04-04_1_2.pdf?download=true",
+        "pdf_sha256": "8f707473e657c3319fdebcb194a3b401a11c801d258c4a77f5523ece5ebcf527",
+        "text_source": "RevX"
+      },
+      "retrieval": {
+        "candidate_pair": [
+          "europe",
+          "politics"
+        ],
+        "score": 0.4298533499240875,
+        "global_passage_index": 32283,
+        "page_index": 2747,
+        "passage_index": 11,
+        "parquet_file": "train-00003-of-00006.parquet",
+        "parquet_row": 5935
+      },
+      "id": "R05",
+      "text_relation_explicit": true,
+      "historical_event_id": null
+    },
+    {
+      "candidate_id": "C21",
+      "from_id": "seizure",
+      "to_id": "commerce",
+      "title": "Eliza号扣船争端进入索赔程序",
+      "relation": "扣船投诉引出司法索赔",
+      "claim": "署名“A Subscriber”的来信称，Eliza号船长和货物主管向百慕大海事法庭索赔，但有关扣船者行为的陈述被法官要求删去。",
+      "speaker": "致Mr. Bache的读者来信，署A Subscriber；消息据称来自返回费城的船长",
+      "evidence_kind": "报道行动",
+      "publication_date": "1796-07-14",
+      "event_dates": [
+        {
+          "as_printed": "we are now informed by the return of the Captain",
+          "meaning": "来信依据船长返回后的消息；案发与审理日期不明",
+          "iso": null
+        }
+      ],
+      "source_chain": [
+        "船长返回费城后的消息",
+        "致Mr. Bache的来信",
+        "本报刊载：1796-07-14"
+      ],
+      "excerpts": [
+        "having filed a claim in the Court of Vice Admiralty of Bermuda, in order to obtain restitution of the property",
+        "ordered the statement to be struck out of the claim as derogatory to the honor and injurious to the character of the honorable Captain Cochrane."
+      ],
+      "limitations": "这是单方来信，未核对案卷；原文说删去有关行为的陈述，不等于整项索赔被驳回。扫描较淡，细节仍需更清晰底本复核。",
+      "review": {
+        "status": "已核对相关扫描段落",
+        "scope": "核对支持本条关系的关键句和文章上下文；未逐字校勘整页。",
+        "legibility": "部分字迹浅淡；索赔、删除陈述的关键结构可辨",
+        "ocr_notes": [
+          "不把“删除陈述”升级为“全案败诉”。"
+        ],
+        "historical_causality_verified": false,
+        "independent_corroboration": false
+      },
+      "source": {
+        "newspaper_title": "The Patowmac guardian, and Berkeley advertiser",
+        "lccn": "sn84038410",
+        "place": "Shepherdstown, Va. [W. Va.]",
+        "page": 3,
+        "edition": 1,
+        "page_key": "sn84038410|1796-07-14|1|3",
+        "issue_url": "https://www.loc.gov/item/sn84038410/1796-07-14/ed-1/",
+        "loc_pdf_url": "https://tile.loc.gov/storage-services/service/ndnp/wvu/batch_wvu_zarley_ver02/data/sn84038410/01000424529/1796071401/0151.pdf",
+        "pinned_scan_url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810/resolve/0b97906ad32e269376872934820357fc333151d8/media/sn84038410/1796-07-14_1_3.pdf?download=true",
+        "pdf_sha256": "74ba0886934c2df92a03272254d140f06a6ea49abe695e8b3c651fa4bc7be55a",
+        "text_source": "RevX"
+      },
+      "retrieval": {
+        "candidate_pair": [
+          "shipping",
+          "politics"
+        ],
+        "score": 0.355974018573761,
+        "global_passage_index": 46755,
+        "page_index": 3855,
+        "passage_index": 4,
+        "parquet_file": "train-00005-of-00006.parquet",
+        "parquet_row": 6920
+      },
+      "id": "R06",
+      "text_relation_explicit": true,
+      "historical_event_id": null
+    },
+    {
+      "candidate_id": "C25",
+      "from_id": "military",
+      "to_id": "information",
+      "title": "法国舰队传闻遭到时间与航程质疑",
+      "relation": "编者按质疑战事消息",
+      "claim": "报道先转述Boyd船长关于法国舰队赴爱尔兰的消息，随后一段署“CHRONICLE”的按语，用出航日、消息传回所需时间和航线提出质疑。",
+      "speaker": "船长Boyd的消息，以及署CHRONICLE的按语作者",
+      "evidence_kind": "作者判断",
+      "publication_date": "1797-03-25",
+      "event_dates": [
+        {
+          "as_printed": "29th December; 26th of the same month",
+          "meaning": "按语援引的两次出航日；仅记录其质疑依据，未核实日期正确性",
+          "iso": null
+        }
+      ],
+      "source_chain": [
+        "船长Boyd的报告",
+        "署CHRONICLE的质疑按语",
+        "本报刊载：1797-03-25"
+      ],
+      "excerpts": [
+        "NOTE. Capt. Boyd failed from Liverpool on the 29th December, and the French fleet left Brest, on the 26th of the same month: How then is it possible they should have reached Ireland in 3 days, and the accounts from thence received at Liverpool?"
+      ],
+      "limitations": "可证明报纸呈现了“报告—质疑”的关系；按语自己的日期、人口与距离也可能有误，不能据此确定舰队实际结局。",
+      "review": {
+        "status": "已核对相关扫描段落",
+        "scope": "核对支持本条关系的关键句和文章上下文；未逐字校勘整页。",
+        "legibility": "按语关键句清楚",
+        "ocr_notes": [
+          "RevX把本段sailed识别为failed；展示保留转写，扫描可见sailed。"
+        ],
+        "historical_causality_verified": false,
+        "independent_corroboration": false
+      },
+      "source": {
+        "newspaper_title": "The New Hampshire gazette",
+        "lccn": "sn83025588",
+        "place": "Portsmouth [N.H.]",
+        "page": 2,
+        "edition": 1,
+        "page_key": "sn83025588|1797-03-25|1|2",
+        "issue_url": "https://www.loc.gov/item/sn83025588/1797-03-25/ed-1/",
+        "loc_pdf_url": "https://tile.loc.gov/storage-services/service/ndnp/nhd/batch_nhd_avalon_ver02/data/sn83025588/00517010765/1797032501/0258.pdf",
+        "pinned_scan_url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810/resolve/0b97906ad32e269376872934820357fc333151d8/media/sn83025588/1797-03-25_1_2.pdf?download=true",
+        "pdf_sha256": "1ff1a650ae955dd7317a3e146efc9b46ac953ee8e85d5ce8c28e432fe3d40507",
+        "text_source": "RevX"
+      },
+      "retrieval": {
+        "candidate_pair": [
+          "shipping",
+          "europe"
+        ],
+        "score": 0.3874697685241699,
+        "global_passage_index": 19637,
+        "page_index": 1805,
+        "passage_index": 12,
+        "parquet_file": "train-00001-of-00006.parquet",
+        "parquet_row": 9253
+      },
+      "id": "R07",
+      "text_relation_explicit": true,
+      "historical_event_id": null
+    },
+    {
+      "candidate_id": "C26",
+      "from_id": "information",
+      "to_id": "seizure",
+      "title": "扣船法令援引美国报纸作为依据",
+      "relation": "法令引用报道为扣船提供理由",
+      "claim": "标为译自卡宴报纸的法令，援引美国报纸关于英国侵扰美国船只的报道，随后授权捕获往返英国港口等特定美国船只。本报又以带政治立场的标题引介它。",
+      "speaker": "法属圭亚那督政府代理人的法令译文（署JEANNET），以及引介标题的作者",
+      "evidence_kind": "刊载文件",
+      "publication_date": "1797-06-27",
+      "event_dates": [
+        {
+          "as_printed": "11th Germinal, 5th year of the French Republic",
+          "meaning": "法令署期；保留共和历，未换算",
+          "iso": null
+        },
+        {
+          "as_printed": "3 October, 1796; 1, 3 and 22 Feb. 1797",
+          "meaning": "被援引美国报纸日期的节录；完整列表见下文原文",
+          "iso": null
+        }
+      ],
+      "source_chain": [
+        "法令声称援引美国报纸",
+        "标为译自Cayenne paper",
+        "费城消息栏：6月12日",
+        "本报刊载：1797-06-27"
+      ],
+      "excerpts": [
+        "seeing that it results from American Papers in our possession, under date of the 11, 14, 18, 21, 25 and 28 July; 1, 4, 15, 18 and 22 August; 1, 5, 12, 15 and 26 September, and 3 October, 1796; 1, 3 and 22 Feb. 1797; & that commanders of English vessels of war have insulted, pillaged, pressed, whipped, put in irons American citizens navigating under the flag of the United States, opened the letters of which they were bearers, taken and condemned their vessels and cargoes as good prizes; has decreed, and decrees as follows:",
+        "1st. All the vessels of the Republic, and French cruisers, are authorised to take, and bring into the ports of the Republic, American vessels bound to or from an English port, and those which, without being cleared expressly for an English port, are cleared for a vague destination, such as for the West-Indies or the Islands."
+      ],
+      "limitations": "可以确认该译文把报纸当作依据；未取得法令原件、被援引报纸或执行记录。来源链是本文自述，尚未通过逐篇转载匹配验证。",
+      "review": {
+        "status": "已核对相关扫描段落",
+        "scope": "核对支持本条关系的关键句和文章上下文；未逐字校勘整页。",
+        "legibility": "援引依据与第一条均清楚",
+        "ocr_notes": [],
+        "historical_causality_verified": false,
+        "independent_corroboration": false
+      },
+      "source": {
+        "newspaper_title": "The New Hampshire gazette",
+        "lccn": "sn83025588",
+        "place": "Portsmouth [N.H.]",
+        "page": 3,
+        "edition": 1,
+        "page_key": "sn83025588|1797-06-27|1|3",
+        "issue_url": "https://www.loc.gov/item/sn83025588/1797-06-27/ed-1/",
+        "loc_pdf_url": "https://tile.loc.gov/storage-services/service/ndnp/nhd/batch_nhd_avalon_ver02/data/sn83025588/00517010765/1797062701/0313.pdf",
+        "pinned_scan_url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810/resolve/0b97906ad32e269376872934820357fc333151d8/media/sn83025588/1797-06-27_1_3.pdf?download=true",
+        "pdf_sha256": "88675815129b2c9a2875a4fdbe6c1a518ff0c757530908cd9915206057fcaf86",
+        "text_source": "RevX"
+      },
+      "retrieval": {
+        "candidate_pair": [
+          "shipping",
+          "europe"
+        ],
+        "score": 0.3850212097167969,
+        "global_passage_index": 19700,
+        "page_index": 1810,
+        "passage_index": 0,
+        "parquet_file": "train-00001-of-00006.parquet",
+        "parquet_row": 9308
+      },
+      "id": "R08",
+      "text_relation_explicit": true,
+      "historical_event_id": null
+    },
+    {
+      "candidate_id": "C36",
+      "from_id": "military",
+      "to_id": "politics",
+      "title": "欧洲战事被用来劝美国抵抗法国",
+      "relation": "用海外案例论证本国立场",
+      "claim": "一段取自《Cannibals’ Progress》的政治文字，向美国读者并列“对法妥协者受损”和“抵抗者保全贸易与自由”的图景，以支持抵抗法国。",
+      "speaker": "《Cannibals’ Progress》摘录中的讲话者；本报引介该摘录",
+      "evidence_kind": "作者判断",
+      "publication_date": "1798-08-14",
+      "event_dates": [
+        {
+          "as_printed": null,
+          "meaning": "摘录涉及多个欧洲案例，没有统一事件日期",
+          "iso": null
+        }
+      ],
+      "source_chain": [
+        "书册Cannibals’ Progress的结尾呼吁",
+        "本报引介并摘录：1798-08-14"
+      ],
+      "excerpts": [
+        "But, the example is not complete without showing you what would have been the effect of an opposite conduct . This you must also learn by again turning your eyes on Europe. There you will perceive, that those who have fought the French with bravery, who have obstinately resisted the progress of their principles, and who have never yielded to their insolent demands, are still secure in the enjoyment of their commerce, their wealth, their liberty, and their religion."
+      ],
+      "limitations": "这条关系属于政治类比与说服。文中的暴行数字、各国政策效果及“抵抗者都安全”的概括均未独立核实。",
+      "review": {
+        "status": "已核对相关扫描段落",
+        "scope": "核对支持本条关系的关键句和文章上下文；未逐字校勘整页。",
+        "legibility": "支持政治类比的段落清楚",
+        "ocr_notes": [],
+        "historical_causality_verified": false,
+        "independent_corroboration": false
+      },
+      "source": {
+        "newspaper_title": "The New Hampshire gazette",
+        "lccn": "sn83025588",
+        "place": "Portsmouth [N.H.]",
+        "page": 1,
+        "edition": 1,
+        "page_key": "sn83025588|1798-08-14|1|1",
+        "issue_url": "https://www.loc.gov/item/sn83025588/1798-08-14/ed-1/",
+        "loc_pdf_url": "https://tile.loc.gov/storage-services/service/ndnp/nhd/batch_nhd_avalon_ver02/data/sn83025588/00517010765/1798081401/0551.pdf",
+        "pinned_scan_url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810/resolve/0b97906ad32e269376872934820357fc333151d8/media/sn83025588/1798-08-14_1_1.pdf?download=true",
+        "pdf_sha256": "b3dd564cefe0d60e1890ab1c56a5c6b4884300e6169bd3650cf6657d0c34edb4",
+        "text_source": "RevX"
+      },
+      "retrieval": {
+        "candidate_pair": [
+          "europe",
+          "politics"
+        ],
+        "score": 0.4575487971305847,
+        "global_passage_index": 19938,
+        "page_index": 1825,
+        "passage_index": 6,
+        "parquet_file": "train-00001-of-00006.parquet",
+        "parquet_row": 9546
+      },
+      "id": "R09",
+      "text_relation_explicit": true,
+      "historical_event_id": null
+    },
+    {
+      "candidate_id": "C34",
+      "from_id": "military",
+      "to_id": "institutions",
+      "title": "护航与俘获战果成为建设海军的理由",
+      "relation": "战果被用于为军备辩护",
+      "claim": "在United States号俘获两艘私掠船的消息后，方括号评论把俘获与护航称为建设海军明智的证明，并用它回应费用方面的反对。",
+      "speaker": "消息后的方括号评论作者（本页未署名）",
+      "evidence_kind": "作者判断",
+      "publication_date": "1798-10-16",
+      "event_dates": [
+        {
+          "as_printed": "Philadelphia, Sept. 24; on Thursday last",
+          "meaning": "消息栏日期及相对返航时间；不换算为确切战斗日期",
+          "iso": null
+        }
+      ],
+      "source_chain": [
+        "费城消息：9月24日",
+        "本报方括号评论",
+        "本报刊载：1798-10-16"
+      ],
+      "excerpts": [
+        "Nothing can more completely show the wisdom and importance of our establishing a navy, than the events which have so soon followed. Our prizes are already taken; much property has been convoyed; and the dastardly pirates shrink back from our coasts, and carefully avoid the combat. Every vessel we can capture renders us more potent; and the advantages already experienced by our floating castles go far towards defraying the expenses incurred."
+      ],
+      "limitations": "“收益抵消费用”“已经起到威慑”是评论的判断；需要舰队账册与航运损失数据才能评估。",
+      "review": {
+        "status": "已核对相关扫描段落",
+        "scope": "核对支持本条关系的关键句和文章上下文；未逐字校勘整页。",
+        "legibility": "报道与评论分界、关键句均清楚",
+        "ocr_notes": [],
+        "historical_causality_verified": false,
+        "independent_corroboration": false
+      },
+      "source": {
+        "newspaper_title": "The eagle",
+        "lccn": "sn90062451",
+        "place": "Hanover, N.H.",
+        "page": 3,
+        "edition": 1,
+        "page_key": "sn90062451|1798-10-16|1|3",
+        "issue_url": "https://www.loc.gov/item/sn90062451/1798-10-16/ed-1/",
+        "loc_pdf_url": "https://tile.loc.gov/storage-services/service/ndnp/nhd/batch_nhd_eider_ver01/data/sn90062451/00541314738/1798101601/0007.pdf",
+        "pinned_scan_url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810/resolve/0b97906ad32e269376872934820357fc333151d8/media/sn90062451/1798-10-16_1_3.pdf?download=true",
+        "pdf_sha256": "65e4327ea2ac2fe0aa05e345a581a082e35bbbfd4f9571661e448c482380698f",
+        "text_source": "RevX"
+      },
+      "retrieval": {
+        "candidate_pair": [
+          "shipping",
+          "politics"
+        ],
+        "score": 0.35658565163612366,
+        "global_passage_index": 49479,
+        "page_index": 4090,
+        "passage_index": 4,
+        "parquet_file": "train-00005-of-00006.parquet",
+        "parquet_row": 12955
+      },
+      "id": "R10",
+      "text_relation_explicit": true,
+      "historical_event_id": null
+    },
+    {
+      "candidate_id": "C39",
+      "from_id": "seizure",
+      "to_id": "commerce",
+      "title": "扣船风险被转化为给商人的公开提醒",
+      "relation": "扣船消息引出避险建议",
+      "claim": "洪都拉斯湾来信称，主管当地海军事务的Moss将携带英国制造品的美国船只视为可扣押对象，并已扣下Molly号；写信人要求公开消息，提醒准备走这条航线的人预防损失。",
+      "speaker": "居于Bay of Honduras的一位匿名来信人",
+      "evidence_kind": "报道行动",
+      "publication_date": "1799-06-24",
+      "event_dates": [
+        {
+          "as_printed": "February 18, 1799",
+          "meaning": "来信日期；扣船被称为“昨天”",
+          "iso": "1799-02-18"
+        }
+      ],
+      "source_chain": [
+        "洪都拉斯湾来信：1799-02-18",
+        "纽约消息栏：5月29日",
+        "本报刊载：1799-06-24"
+      ],
+      "excerpts": [
+        "consider all American vessels having British manufactured goods on board, and arriving here, are liable to seizure",
+        "Should you therefore be disposed to send vessels this way, you will no doubt, provide against the same. I understand that he has a verbal declaration, that he shall not trouble vessels from America having the raw materials of that country on board ; It is therefore proper that this information should be made as public as possible, in order that the citizens of the United States of America may not be injured thereby."
+      ],
+      "limitations": "可确认警示和建议已被刊登，不能据此推断商人确实改变路线或货物。有关扣押规则及原材料例外仍是来信中的陈述。",
+      "review": {
+        "status": "已核对相关扫描段落",
+        "scope": "核对支持本条关系的关键句和文章上下文；未逐字校勘整页。",
+        "legibility": "来信日期、规则与建议清楚",
+        "ocr_notes": [
+          "RevX在附近把consigned识别为confined；该词不进入本条摘引。"
+        ],
+        "historical_causality_verified": false,
+        "independent_corroboration": false
+      },
+      "source": {
+        "newspaper_title": "The Mirror",
+        "lccn": "sn83025525",
+        "place": "Concord, N.H.",
+        "page": 2,
+        "edition": 1,
+        "page_key": "sn83025525|1799-06-24|1|2",
+        "issue_url": "https://www.loc.gov/item/sn83025525/1799-06-24/ed-1/",
+        "loc_pdf_url": "https://tile.loc.gov/storage-services/service/ndnp/nhd/batch_nhd_eider_ver01/data/sn83025525/00541315822/1799062401/0218.pdf",
+        "pinned_scan_url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810/resolve/0b97906ad32e269376872934820357fc333151d8/media/sn83025525/1799-06-24_1_2.pdf?download=true",
+        "pdf_sha256": "5b43f0957e74eef56890346c65ec79941477c467278179846e80a55a01d71618",
+        "text_source": "RevX"
+      },
+      "retrieval": {
+        "candidate_pair": [
+          "shipping",
+          "politics"
+        ],
+        "score": 0.35152727365493774,
+        "global_passage_index": 13435,
+        "page_index": 1199,
+        "passage_index": 1,
+        "parquet_file": "train-00001-of-00006.parquet",
+        "parquet_row": 3041
+      },
+      "id": "R11",
+      "text_relation_explicit": true,
+      "historical_event_id": null
+    },
+    {
+      "candidate_id": "C42",
+      "from_id": "military",
+      "to_id": "politics",
+      "title": "对外宣战被设想为划分国内阵营的工具",
+      "relation": "战争主张连接国内政治动员",
+      "claim": "一则标为Communication的文字认为，对法正式宣战会迫使美国公民选边，让政府识别朋友与敌人，并压制国内所谓“French party”。",
+      "speaker": "Trenton消息栏中的Communication作者（匿名）",
+      "evidence_kind": "作者判断",
+      "publication_date": "1799-07-17",
+      "event_dates": [
+        {
+          "as_printed": "TRENTON, July 15; one year ago",
+          "meaning": "来稿消息栏日期与反事实回顾；不是宣战发生日期",
+          "iso": null
+        }
+      ],
+      "source_chain": [
+        "Trenton来稿：7月15日",
+        "本报刊载：1799-07-17"
+      ],
+      "excerpts": [
+        "it would have compelled our citizens to take sides, and thus have discovered to the government its friends and its enemies.",
+        "But a declaration of war would take us at once out of our present uncertain situation, and completely crush the French party among us."
+      ],
+      "limitations": "这是一项带阵营立场的主张与反事实判断，不表示正式宣战或预期的政治后果实际发生。",
+      "review": {
+        "status": "已核对相关扫描段落",
+        "scope": "核对支持本条关系的关键句和文章上下文；未逐字校勘整页。",
+        "legibility": "关键句清楚",
+        "ocr_notes": [],
+        "historical_causality_verified": false,
+        "independent_corroboration": false
+      },
+      "source": {
+        "newspaper_title": "Gazette of the United States, & Philadelphia daily advertiser.",
+        "lccn": "sn83025881",
+        "place": "Philadelphia [Pa.]",
+        "page": 3,
+        "edition": 1,
+        "page_key": "sn83025881|1799-07-17|1|3",
+        "issue_url": "https://www.loc.gov/item/sn83025881/1799-07-17/ed-1/",
+        "loc_pdf_url": "https://tile.loc.gov/storage-services/service/ndnp/dlc/batch_dlc_laperm_ver01/data/sn83025881/print/1799071701/0003.pdf",
+        "pinned_scan_url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810/resolve/0b97906ad32e269376872934820357fc333151d8/media/sn83025881/1799-07-17_1_3.pdf?download=true",
+        "pdf_sha256": "91430a7fef70c22b95be4a21df371cb8da7af462aba6c381ca395c0c6da579b3",
+        "text_source": "RevX"
+      },
+      "retrieval": {
+        "candidate_pair": [
+          "europe",
+          "politics"
+        ],
+        "score": 0.4387238621711731,
+        "global_passage_index": 23242,
+        "page_index": 2055,
+        "passage_index": 6,
+        "parquet_file": "train-00002-of-00006.parquet",
+        "parquet_row": 3080
+      },
+      "id": "R12",
+      "text_relation_explicit": true,
+      "historical_event_id": null
+    },
+    {
+      "candidate_id": "C41",
+      "from_id": "diplomacy",
+      "to_id": "politics",
+      "title": "法国的接待保证成为支持再谈判的理由",
+      "relation": "外交保证被用于为谈判辩护",
+      "claim": "一篇续载政论把法国愿意尊重美国使节的保证，与总统重新提名使节联系起来，并引用Gerry的意见为法国谈判诚意辩护。",
+      "speaker": "本页续载政论作者（本页未见署名）",
+      "evidence_kind": "作者判断",
+      "publication_date": "1799-11-15",
+      "event_dates": [
+        {
+          "as_printed": null,
+          "meaning": "回顾外交保证、提名与Gerry报告；本段未给具体发生日期",
+          "iso": null
+        }
+      ],
+      "source_chain": [
+        "作者援引外交往来与Gerry的陈述",
+        "续载政论",
+        "本报刊载：1799-11-15"
+      ],
+      "excerpts": [
+        "In consequence of this declaration of the president, the French minister gave the assurances in the very terms prescribed by the president, and directed his agent to carry to our minister in Holland \"those positive expressions, in order to convince him of the sincerity of the French government, and prevail upon him to transmit them to his government.\" The president in his message to the senate, considered this as a compliance with the condition, on the performance of which, he had always been determined to send another minister to France; and in consequence of that condition having been complied with, nominated a minister for that purpose."
+      ],
+      "limitations": "记录的是一方对外交过程的解释。不能仅凭该文确定法国政府的真实意图，也不能把它视为对其他报纸的直接回应。",
+      "review": {
+        "status": "已核对相关扫描段落",
+        "scope": "核对支持本条关系的关键句和文章上下文；未逐字校勘整页。",
+        "legibility": "扫描分辨率较低；保证与提名的主要论述可辨",
+        "ocr_notes": [],
+        "historical_causality_verified": false,
+        "independent_corroboration": false
+      },
+      "source": {
+        "newspaper_title": "Virginia Argus",
+        "lccn": "sn84024710",
+        "place": "Richmond, Va.",
+        "page": 2,
+        "edition": 1,
+        "page_key": "sn84024710|1799-11-15|1|2",
+        "issue_url": "https://www.loc.gov/item/sn84024710/1799-11-15/ed-1/",
+        "loc_pdf_url": "https://tile.loc.gov/storage-services/service/ndnp/vi/batch_vi_otters_ver02/data/sn84024710/00414184169/1799111501/0067.pdf",
+        "pinned_scan_url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810/resolve/0b97906ad32e269376872934820357fc333151d8/media/sn84024710/1799-11-15_1_2.pdf?download=true",
+        "pdf_sha256": "9f1f1580451a83522ad292effbd7abf6a5024c60c0fcad135a16fd053a542e03",
+        "text_source": "RevX"
+      },
+      "retrieval": {
+        "candidate_pair": [
+          "europe",
+          "politics"
+        ],
+        "score": 0.4564245939254761,
+        "global_passage_index": 36266,
+        "page_index": 3095,
+        "passage_index": 4,
+        "parquet_file": "train-00004-of-00006.parquet",
+        "parquet_row": 5352
+      },
+      "id": "R13",
+      "text_relation_explicit": true,
+      "historical_event_id": null
+    },
+    {
+      "candidate_id": "C46",
+      "from_id": "diplomacy",
+      "to_id": "commerce",
+      "title": "条约消息引出领事宴请与船舶庆祝",
+      "relation": "条约消息与公开回应相连",
+      "claim": "一则注明来自“Boston paper”的消息援引船长见闻：美国驻利物浦领事因对法条约达成而宴请同胞，美国船只为此悬挂旗帜。",
+      "speaker": "Reward号船长的消息；经一份未具名波士顿报纸转述",
+      "evidence_kind": "报道行动",
+      "publication_date": "1800-12-11",
+      "event_dates": [
+        {
+          "as_printed": "the 19th of October",
+          "meaning": "船长自利物浦离港日；庆祝发生的确切日期未写明",
+          "iso": null
+        }
+      ],
+      "source_chain": [
+        "利物浦的船长见闻",
+        "未具名Boston paper",
+        "本报刊载：1800-12-11"
+      ],
+      "excerpts": [
+        "the United States Consul gave an entertainment to his countrymen at Liverpool, on the conclusion of the treaty with France; and all the American vessels were dressed in their colors on the occasion."
+      ],
+      "limitations": "报道支持“对条约消息的公开庆祝”，不证明条约已全面执行、海上损失停止或长期问题得到解决。",
+      "review": {
+        "status": "已核对相关扫描段落",
+        "scope": "核对支持本条关系的关键句和文章上下文；未逐字校勘整页。",
+        "legibility": "庆祝细节及Boston paper标注清楚",
+        "ocr_notes": [
+          "RevX把船长姓转为Widgey；扫描为Widgery。正文概括不依赖这一拼写。"
+        ],
+        "historical_causality_verified": false,
+        "independent_corroboration": false
+      },
+      "source": {
+        "newspaper_title": "Gazette of the United States, & daily advertiser.",
+        "lccn": "sn84026272",
+        "place": "Philadelphia [Pa.]",
+        "page": 3,
+        "edition": 1,
+        "page_key": "sn84026272|1800-12-11|1|3",
+        "issue_url": "https://www.loc.gov/item/sn84026272/1800-12-11/ed-1/",
+        "loc_pdf_url": "https://tile.loc.gov/storage-services/service/ndnp/dlc/batch_dlc_ocicat_ver01/data/sn84026272/print/1800121101/0003.pdf",
+        "pinned_scan_url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810/resolve/0b97906ad32e269376872934820357fc333151d8/media/sn84026272/1800-12-11_1_3.pdf?download=true",
+        "pdf_sha256": "cd79af67a02fd218be7ddfd44123a1cc8a46cb3e1824f970632b350040060ef4",
+        "text_source": "RevX"
+      },
+      "retrieval": {
+        "candidate_pair": [
+          "shipping",
+          "politics"
+        ],
+        "score": 0.34273508191108704,
+        "global_passage_index": 43699,
+        "page_index": 3597,
+        "passage_index": 7,
+        "parquet_file": "train-00005-of-00006.parquet",
+        "parquet_row": 3821
+      },
+      "id": "R14",
+      "text_relation_explicit": true,
+      "historical_event_id": null
+    },
+    {
+      "candidate_id": "C48",
+      "from_id": "military",
+      "to_id": "institutions",
+      "title": "欧洲炮兵经验进入美国常备军制辩论",
+      "relation": "海外军事经验被用作制度论据",
+      "claim": "众议院辩论报道中的Rutledge，以法国炮兵战绩等例子说明炮兵需要长期训练，主张维持炮兵编制，并提到军校方案未获采纳后应保有强有力的军事机构。",
+      "speaker": "众议院辩论报道中的Mr. Rutledge",
+      "evidence_kind": "作者判断",
+      "publication_date": "1800-12-26",
+      "event_dates": [
+        {
+          "as_printed": "Wednesday, December 17",
+          "meaning": "该段辩论所处日期标题；年份据本期1800年判断",
+          "iso": null
+        }
+      ],
+      "source_chain": [
+        "众议院辩论报道：12月17日",
+        "本报刊载：1800-12-26"
+      ],
+      "excerpts": [
+        "Artillery, from their very nature, ought to be permanent. Infantry and cavalry can be soon raised and made active; but not so with artillery. They require time to render them serviceable. We all know the force of artillery in war. The brilliant successes of the French were owing to the superiority of their artillery to that of their enemies.",
+        "The Secretary at war had last session made a report recommending the formation of a military school. But his plan had not been embraced. This having failed he hoped a strong military establishment would be substituted in its room."
+      ],
+      "limitations": "属于议员在辩论中的论据与建议；法国战绩的原因及普鲁士历史类比未经独立核实，也未追踪本次表决和后续军制。",
+      "review": {
+        "status": "已核对相关扫描段落",
+        "scope": "核对支持本条关系的关键句和文章上下文；未逐字校勘整页。",
+        "legibility": "扫描较淡；炮兵训练与军校段落可辨",
+        "ocr_notes": [
+          "RevX在本页其他部分有省略式转写；所摘关键句已对照扫描。"
+        ],
+        "historical_causality_verified": false,
+        "independent_corroboration": false
+      },
+      "source": {
+        "newspaper_title": "Virginia Argus",
+        "lccn": "sn84024710",
+        "place": "Richmond, Va.",
+        "page": 2,
+        "edition": 1,
+        "page_key": "sn84024710|1800-12-26|1|2",
+        "issue_url": "https://www.loc.gov/item/sn84024710/1800-12-26/ed-1/",
+        "loc_pdf_url": "https://tile.loc.gov/storage-services/service/ndnp/vi/batch_vi_otters_ver02/data/sn84024710/00414184169/1800122601/0157.pdf",
+        "pinned_scan_url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810/resolve/0b97906ad32e269376872934820357fc333151d8/media/sn84024710/1800-12-26_1_2.pdf?download=true",
+        "pdf_sha256": "f792715785b2996f10cb641ebe5c4016f49d7abe5534d71671cd7f487a8a9954",
+        "text_source": "RevX"
+      },
+      "retrieval": {
+        "candidate_pair": [
+          "europe",
+          "politics"
+        ],
+        "score": 0.44261807203292847,
+        "global_passage_index": 36487,
+        "page_index": 3107,
+        "passage_index": 13,
+        "parquet_file": "train-00004-of-00006.parquet",
+        "parquet_row": 5442
+      },
+      "id": "R15",
+      "text_relation_explicit": true,
+      "historical_event_id": null
+    }
+  ],
+  "rejected_examples": [
+    {
+      "candidate_id": "C03",
+      "publication_date": "1793-06-25",
+      "newspaper_title": "The New Hampshire gazette",
+      "page": 3,
+      "issue_url": "https://www.loc.gov/item/sn83025588/1793-06-25/ed-1/",
+      "retrieved_text": "opinion, that the court could not take notice of a breach of a treaty, if such did exist, without a declaration to that effect from the Congress of the United States. On the last, gave judgment for the plaintiff, as the plea of the defendant could not be supported by the laws and usages of nations. On the 2d point, the court were divided, Mr. Jay, chief-justice of the United States, for the plaintiffs, Mr. Iredell and Mr. Griffin, for the defendants—upon that plea then, judgment was entered for the defendants, a majority of the court supposing that as that law had been carried into complete effect before the treaty of peace, and as by that law, the defendant was discharged from the debt, the treaty of peace could not again charge him.\nBOSTON, June 22.\nThe following is extracted from Capt. Paine's Log-Book.\nThe privateer Betsey and Polly sailed from St. Kitts on a cruise; and on the 12th brought in Capt. Robinson in a brig belonging to Philadelphia, with a cargo consisting of Sugar, Cotton, Coffee and Molasses, which they intended to make a prize of. Same day gave chase to another American, but could not come up with her. May 13. Brought in a brig from St. Lucia, an American, bound to Philadelphia. May 23. Captured a brig belonging",
+      "decision": "不建立该检索组合的关系",
+      "reason": "条约与债务法院案件后转入波士顿航运消息；段落跨文章边界，不能据此连接诉讼与扣船。",
+      "review_scope": "转写文本的文章边界核查；未下载此页扫描。"
+    },
+    {
+      "candidate_id": "C09",
+      "publication_date": "1794-12-03",
+      "newspaper_title": "Gazette of the United States and daily evening advertiser.",
+      "page": 3,
+      "issue_url": "https://www.loc.gov/item/sn84026271/1794-12-03/ed-1/",
+      "retrieved_text": "of the expenditures from the sum of ten thousand dollars appropriated to defray the contingent expenses of government—also informing the house that the President had this day approved and signed the act, granting the privilege of franking, to James White, delegate from the South Western Territory of the United States, and providing for his compensation.\nOn motion of Mr. Lee, a report of the Secretary of war on sixty petitions from invalids made during the last session, was taken into consideration.\nSeveral of the cases were discussed, and finally referred to the committee of claims.\nThe House then in committee of the whole took up the militia compensation bill—in the discussion of which further progress was reported.\nAdjourned\nPORT OF PHILADELPHIA\nARRIVED.\n   Ship Industry, Budd, Days     Canada, Brew, Virginia 2   Margaret, Roberton, Brest 37   Harmony, Alcorn, Lisbon 49   Brig Fair Hebe, M'Keever, Bourdeaux 72   Two Brothers, Peife, Malaga 60   Schr. Polly & Sally, Baird, Bermuda 10   Friendship, McNamara, Virginia 4   Active, Wallace, Do. 4   Sloop Ann, Gardiner, Do. 3   Driver, McHenry, Nantucket 11   Sloop Sylvia, Macy, Nantucket, C.N. Mole 20   13  \nCLEARED.\n   Ship James, Wilson, Charleston.   Hope, Higgins, Boston.   Snow Trufty, Clark, Oporto.   Sloop Israel, Gills, Bedford.    The British ship Dorset was taken on the\n21st October by the Liberty, Captain Gardoni, a French privateer, which privateer also captured the ship Chacer, Capt. King, both from Jamaica, bound to England",
+      "decision": "不建立该检索组合的关系",
+      "reason": "议会报道以Adjourned结束，后接PORT OF PHILADELPHIA到港表；共现来自版面相邻。",
+      "review_scope": "转写文本的文章边界核查；未下载此页扫描。"
+    },
+    {
+      "candidate_id": "C33",
+      "publication_date": "1798-11-21",
+      "newspaper_title": "The New Hampshire gazette",
+      "page": 3,
+      "issue_url": "https://www.loc.gov/item/sn83025588/1798-11-21/ed-1/",
+      "retrieved_text": "provisions. 18th, a whaler from Nantucket, out 6 weeks, had taken nothing. 23d, the fch'r Nancy, Parker, 36 days from St. Bartholomews to Boston, in distress, supplied her with provisions and offered to take her in tow which was declined. 30th, sloop Diana, Volch, 35 days from Jamaica to Alexandria and supplied her with provisions, Capt. V. informed that the day before he sailed, the sloop Union, Hawkins, arrived there, Capt. Hawkins had retaken his vessel from the French; same day spoke the ship Essex, from Gloucester to Norfolk.\nFrom Vattel's Law of Nations.\n\"Piety and religion have an essential influence on the happiness of a nation, and from their importance deserve a particular chapter. Nothing is so proper as piety to strengthen virtue, and give it its full extent. I understand by the word piety, a disposition of soul that leads us to have a view of the Divine Being in all our actions, and to endeavour in every thing we do to please him. This virtue is an indispensable obligation on all mankind; it is the purest source of their felicity; and those who unite in civil society, are still more obliged to practise it. A nation ought then to be pious. The superiors intrusted with the public affairs should constantly propose to deserve the approbation of their Divine Master, and",
+      "decision": "不建立该检索组合的关系",
+      "reason": "船舶日志后接Vattel的宗教与国家论述，未发现支持本检索主题组合的明确关系。",
+      "review_scope": "转写文本的文章边界核查；未下载此页扫描。"
+    },
+    {
+      "candidate_id": "C45",
+      "publication_date": "1800-12-22",
+      "newspaper_title": "Alexandria advertiser and commercial intelligencer",
+      "page": 2,
+      "issue_url": "https://www.loc.gov/item/sn84024011/1800-12-22/ed-1/",
+      "retrieved_text": "have peace; and if we did obtain it, it would be owing to the exertions of his honorable friend and of those who acted with him. To the energetic measures by them pursued, by which the people had been roused from apathy to a lively exertion of their powers and an exhibition of their spirit, we should owe its blessings. Their patriotic labors had warded off the dangers that threatened us, and prevented the adoption of measures in which we might have found our ruin.\nMr. Rutledge concluded with declaring that it was not for him to say what changes had taken place in the internal situation of the country.\nMr. Sheppard said that a great expense had already been incurred in raising the artillery, which would be useless if they were now dismissed. He believed too the artillery to be the most important part of our establishment. For this and other reasons, in the expression of which other members had anticipated him, he was against the motion for the reduction.\n(To be continued.)\nBOSTON, December 11.\nSaturday arrived, brig Planter, Borman, Demerara.\nSunday arrived, brig Peregrine, Foster, Gottenburg.\nTuesday arrived, schr. Betsey, Manson, St. Sebastians.\nBrig Friendship, Patterson, from Liverpool.\nBrig Horizon, Young, Lisbon.\nSchr. Jolly Rover, Drinkwater, Turks Island.\nYesterday arrived, brig Falcyon, Gale, from Bremen.\nPHILADELPHIA, December 17.\nShip",
+      "decision": "不建立该检索组合的关系",
+      "reason": "国会炮兵辩论后以To be continued分隔，再进入BOSTON到港表；航运与军制的邻接不构成直接联系。",
+      "review_scope": "转写文本的文章边界核查；未下载此页扫描。"
+    }
+  ],
+  "candidate_dispositions": [
+    {
+      "candidate_id": "C01",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C02",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C03",
+      "decision": "rejected_adjacency",
+      "note": "条约与债务法院案件后转入波士顿航运消息；段落跨文章边界，不能据此连接诉讼与扣船。"
+    },
+    {
+      "candidate_id": "C04",
+      "decision": "retained",
+      "note": "见证据条目"
+    },
+    {
+      "candidate_id": "C05",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C06",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C07",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C08",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C09",
+      "decision": "rejected_adjacency",
+      "note": "议会报道以Adjourned结束，后接PORT OF PHILADELPHIA到港表；共现来自版面相邻。"
+    },
+    {
+      "candidate_id": "C10",
+      "decision": "retained",
+      "note": "见证据条目"
+    },
+    {
+      "candidate_id": "C11",
+      "decision": "retained",
+      "note": "见证据条目"
+    },
+    {
+      "candidate_id": "C12",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C13",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C14",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C15",
+      "decision": "retained",
+      "note": "见证据条目"
+    },
+    {
+      "candidate_id": "C16",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C17",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C18",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C19",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C20",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C21",
+      "decision": "retained",
+      "note": "见证据条目"
+    },
+    {
+      "candidate_id": "C22",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C23",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C24",
+      "decision": "retained",
+      "note": "见证据条目"
+    },
+    {
+      "candidate_id": "C25",
+      "decision": "retained",
+      "note": "见证据条目"
+    },
+    {
+      "candidate_id": "C26",
+      "decision": "retained",
+      "note": "见证据条目"
+    },
+    {
+      "candidate_id": "C27",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C28",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C29",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C30",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C31",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C32",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C33",
+      "decision": "rejected_adjacency",
+      "note": "船舶日志后接Vattel的宗教与国家论述，未发现支持本检索主题组合的明确关系。"
+    },
+    {
+      "candidate_id": "C34",
+      "decision": "retained",
+      "note": "见证据条目"
+    },
+    {
+      "candidate_id": "C35",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C36",
+      "decision": "retained",
+      "note": "见证据条目"
+    },
+    {
+      "candidate_id": "C37",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C38",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C39",
+      "decision": "retained",
+      "note": "见证据条目"
+    },
+    {
+      "candidate_id": "C40",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C41",
+      "decision": "retained",
+      "note": "见证据条目"
+    },
+    {
+      "candidate_id": "C42",
+      "decision": "retained",
+      "note": "见证据条目"
+    },
+    {
+      "candidate_id": "C43",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C44",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C45",
+      "decision": "rejected_adjacency",
+      "note": "国会炮兵辩论后以To be continued分隔，再进入BOSTON到港表；航运与军制的邻接不构成直接联系。"
+    },
+    {
+      "candidate_id": "C46",
+      "decision": "retained",
+      "note": "见证据条目"
+    },
+    {
+      "candidate_id": "C47",
+      "decision": "screened_not_selected",
+      "note": "初筛后未选入本轮细读；未作最终真伪判定。"
+    },
+    {
+      "candidate_id": "C48",
+      "decision": "retained",
+      "note": "见证据条目"
+    }
+  ],
+  "observations": [
+    {
+      "title": "同一种损失，可以进入多条应对路径",
+      "text": "扣船相关材料可以通向赔偿预期、外交交涉、司法索赔与商人警示。它们是不同时间、不同个案的路径示例，不能串成同一事件的完整过程。",
+      "records": [
+        "R01",
+        "R02",
+        "R06",
+        "R11"
+      ]
+    },
+    {
+      "title": "报道本身也可能成为被援引的对象",
+      "text": "1797年的法令译文明确援引美国报纸，再被带政治立场的标题引介。这个个案适合追查报道、政策引用与再报道之间的回路。",
+      "records": [
+        "R08"
+      ]
+    },
+    {
+      "title": "同一问题会产生竞争性的解决主张",
+      "text": "一部分文字为军备、抵抗或宣战辩护，另一篇为重新谈判辩护。可记录这些立场并存；目前不能认定它们彼此直接回应。",
+      "records": [
+        "R09",
+        "R10",
+        "R12",
+        "R13"
+      ]
+    },
+    {
+      "title": "“出现回应”与“问题解决”需要分开记录",
+      "text": "放行例外、谈判辩护和条约庆祝说明有规则或回应出现；都不足以证明损失停止、措施执行或问题长期解决。",
+      "records": [
+        "R03",
+        "R13",
+        "R14"
+      ]
+    }
+  ],
+  "next_step": {
+    "question": "同一个问题反复出现时，后续报道是否记得已有应对，并提供执行或结果证据？",
+    "tasks": [
+      "先围绕扣船—索赔与护航扩展连续报道，记录具名船只、地点、当事人。",
+      "区分新事件、转载、回顾、争论和结果追踪，再比较持续讨论与短时爆发。",
+      "使用独立档案或政策执行记录核对赔偿、放行与停损；注意力趋势留待覆盖与转载校正后衡量。"
+    ]
+  }
+}

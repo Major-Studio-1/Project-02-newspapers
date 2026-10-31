@@ -1,0 +1,796 @@
+{
+  "schema_version": "1.0",
+  "created_date": "2026-10-30",
+  "dataset": {
+    "name": "RevolutionCrossroads/loc_chronicling_america_1770-1810",
+    "revision": "0b97906ad32e269376872934820357fc333151d8"
+  },
+  "search": {
+    "passes": 2,
+    "windows": {
+      "F1": {
+        "title": "法国舰队赴爱尔兰消息与质疑",
+        "start": "1797-01-01",
+        "end": "1797-06-30",
+        "pattern": "bantry|(?:boyd.{0,1300}ireland)|(?:ireland.{0,1300}boyd)",
+        "terms": [
+          "bantry",
+          "boyd",
+          "liverpool",
+          "chronicle",
+          "29th",
+          "26th",
+          "twenty thousand",
+          "20,000"
+        ]
+      },
+      "F2": {
+        "title": "卡宴扣船法令与美国报纸引用",
+        "start": "1797-02-01",
+        "end": "1797-09-30",
+        "pattern": "jeannet|jeannct|(?:cayenne.{0,1800}decree)|(?:decree.{0,1800}cayenne)|american jacobin newspaper",
+        "terms": [
+          "jeannet",
+          "cayenne",
+          "american papers",
+          "germinal",
+          "vague destination",
+          "jacobin",
+          "english port"
+        ]
+      },
+      "F3": {
+        "title": "好望角航线放行决议：文件转载对照",
+        "start": "1794-05-01",
+        "end": "1794-06-30",
+        "pattern": "(?:cape.{0,30}good hope.{0,1100}clearance)|(?:clearance.{0,1100}cape.{0,30}good hope)",
+        "terms": [
+          "cape",
+          "good hope",
+          "clearances",
+          "unlade",
+          "security",
+          "may 7",
+          "washington"
+        ]
+      }
+    },
+    "expanded_patterns": {
+      "F1": "bantr[yi]|bant[rv]y|boy[de].{0,900}(?:ireland|liverpool)|(?:ireland|liverpool).{0,900}boy[de]",
+      "F2": "jeann[ec]t|vague destination|(?:guiana|cayen[an]e?).{0,2200}(?:decree|english port)|(?:decree|american papers).{0,2200}(?:guiana|cayen[an]e?)",
+      "F3": "good ?hope.{0,1400}(?:embargo|unlad|clearance)|(?:embargo|unlad|clearance).{0,1400}good ?hope"
+    },
+    "coverage": {
+      "F1": {
+        "pages": 726,
+        "issues": 182,
+        "series": 7
+      },
+      "F2": {
+        "pages": 910,
+        "issues": 228,
+        "series": 7
+      },
+      "F3": {
+        "pages": 348,
+        "issues": 87,
+        "series": 8
+      }
+    },
+    "candidate_pages": 24,
+    "note": "两轮均搜索固定6个分片中的两套OCR；F1/F2窗口重叠，覆盖数不可相加。关键词召回率未知。"
+  },
+  "families": [
+    {
+      "id": "F1",
+      "title": "舰队消息：流传与质疑",
+      "subtitle": "3个同文版本 + 1篇后续综述",
+      "ids": [
+        "H001",
+        "H002",
+        "H006",
+        "H007"
+      ],
+      "finding": "同一核心消息在3家报纸中出现；1个版本附有 CHRONICLE 质疑。27天是最早与最晚检出版本的刊载间隔，不是传播耗时。",
+      "limit": "后续综述不等于明确撤回；无法确定直接转载路线。"
+    },
+    {
+      "id": "F2",
+      "title": "卡宴：扣船报道与失实指控",
+      "subtitle": "2个扣船报道版本 + 1份法令／评论",
+      "ids": [
+        "H012",
+        "X016",
+        "H013"
+      ],
+      "finding": "两份 Peace 号报道可配对；法令附注中的“七条虚假”是政治指控。消息引用、司法扣押和编辑指控必须分层记录。",
+      "limit": "两条材料线不能拼成已证实的“报纸造假→法令→扣船”因果链。"
+    },
+    {
+      "id": "F3",
+      "title": "放行决议：文件对照",
+      "subtitle": "2个刊载版本 + 外部法令文本",
+      "ids": [
+        "H017",
+        "H019"
+      ],
+      "finding": "两版均保留关键适用条件。与国会法令汇编对照，批准日、船只范围及担保条件得到支持。",
+      "limit": "文件准确刊载不等于执行有效，也不能作为整个报纸准确率的代表样本。"
+    }
+  ],
+  "versions": [
+    {
+      "id": "H001",
+      "family": "F1",
+      "date": "1797-03-16",
+      "paper": "The Patowmac guardian, and Berkeley advertiser",
+      "lccn": "sn84038410",
+      "page": 3,
+      "key": "sn84038410|1797-03-16|1|3",
+      "kind": "同文消息 · 最早检出的版本",
+      "note": "原版为 dismasted；RevX 的 distressed 是转写差异。扫描中船长姓名字形与 RevX 的 Boye 也不宜用于人物去重。此处未附后见版本的 CHRONICLE 质疑。",
+      "excerpt": "Captain Boye positively asserts, that previous to his failing, accounts were received at the custom-house of Liverpool, of 17 sail of French vessels, men of war and transports, having a number of troops on board, destined for a descent on Ireland, being through gusts of weather blown into Bantry Bay, most of them distressed; some of the people went on shore, were made prisoners, and sent to Dublin; from the situation of the place the whole must inevitably be captured. They intended to have effected a landing at Londonderry in the North of Ireland.",
+      "excerpt_source": "RevX; whitespace normalized, OCR errors retained and noted",
+      "scan_checked": true,
+      "scan_url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810/resolve/0b97906ad32e269376872934820357fc333151d8/media/sn84038410/1797-03-16_1_3.pdf?download=true",
+      "source_url": "https://www.loc.gov/item/sn84038410/1797-03-16/ed-1/",
+      "sha256": "08bc9690639ec984f62f8a1843b406c00495a1aeffe9c6a375a50e539baa5621",
+      "relation_id": null
+    },
+    {
+      "id": "H002",
+      "family": "F1",
+      "date": "1797-03-25",
+      "paper": "The New Hampshire gazette",
+      "lccn": "sn83025588",
+      "page": 2,
+      "key": "sn83025588|1797-03-25|1|2",
+      "kind": "同文消息 + 署名 CHRONICLE 的质疑",
+      "note": "质疑同时提出日期、路线与人数问题；它也是当时人的解释，不能自动充当事实核查结果。RevX 的 failed 在此为原报 sailed。",
+      "excerpt": "Capt. Boyd, positively asserts, that previous to his sailing, accounts were received at the custom house of Liverpool, of 17 sail of French vessels, men of war and transports, having a number of troops on board, destined for a DESCENT ON IRELAND, being through stress of weather, blown into Bantry Bay, most of them dismasted; some of the people went on shore, were made prisoners, and went to Dublin; from the situation of the place the whole must inevitably be captured. They intended to have effected a landing at Londonderry in the North of Ireland. [NOTE. Capt. Boyd failed from Liverpool on the 29th December, and the French fleet left Brest, on the 26th of the same month: How then is it possible they should have reached Ireland in 3 days, and the accounts from thence received at Liverpool? Can it be thought that 20,000 French troops, and 17 ships of the line, have surrendered to the inhabitants of Bantry, whose population does not exceed 10,000 souls? It is more natural to think the French have taken that town.—Why were those 20,000 French sent to Dublin, 154 miles from Bantry Bay, and not to Cork, that lies but 9 miles from it? Can it be presumed, that the French fleet, in order to effect a landing at Londonderry, had entered the channel of Ireland so full of dangers, instead of sailing westward, on the main; a route much shorter and less difficult, free from the dangers of the channel, and which would not have exposed them to discovery from Liverpool or Dublin, and meet with every obstacle, that could have frustrated their design. CHRONICLE.]",
+      "excerpt_source": "RevX; whitespace normalized, OCR errors retained and noted",
+      "scan_checked": true,
+      "scan_url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810/resolve/0b97906ad32e269376872934820357fc333151d8/media/sn83025588/1797-03-25_1_2.pdf?download=true",
+      "source_url": "https://www.loc.gov/item/sn83025588/1797-03-25/ed-1/",
+      "sha256": "1ff1a650ae955dd7317a3e146efc9b46ac953ee8e85d5ce8c28e432fe3d40507",
+      "relation_id": "R07"
+    },
+    {
+      "id": "H006",
+      "family": "F1",
+      "date": "1797-04-12",
+      "paper": "The Kentucky gazette",
+      "lccn": "sn82014782",
+      "page": 3,
+      "key": "sn82014782|1797-04-12|1|3",
+      "kind": "同文消息 · 肯塔基版本",
+      "note": "核心段落再次出现，保留 inevitably be captured 的预测语气。它没有紧跟 H002 的 CHRONICLE 注释；尚未证明此版本取自 H002。",
+      "excerpt": "Capt. Boyd positively asserts, that previous to his sailing, accounts were received at the Custom house of Liverpool of 17 sail of French vessels, men of war and transports, having a number of troops on board, destined for a descent on Ireland, being thro' stress of weather, blown into Bantry Bay, most of them dismasted; some of the people went on shore, were made prisoners, and sent to Dublin; from the situation of the place, the whole must inevitably be captured. They intended to have effected a landing at Londonderry, in the North of Ireland.",
+      "excerpt_source": "RevX; whitespace normalized, OCR errors retained and noted",
+      "scan_checked": true,
+      "scan_url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810/resolve/0b97906ad32e269376872934820357fc333151d8/media/sn82014782/1797-04-12_1_3.pdf?download=true",
+      "source_url": "https://www.loc.gov/item/sn82014782/1797-04-12/ed-1/",
+      "sha256": "a89f7a74516927070e9163d3abd330756b50db24820be3851d897e0c9531a073",
+      "relation_id": null
+    },
+    {
+      "id": "H007",
+      "family": "F1",
+      "date": "1797-04-19",
+      "paper": "The Kentucky gazette",
+      "lccn": "sn82014782",
+      "page": 2,
+      "key": "sn82014782|1797-04-19|1|2",
+      "kind": "后续综述 · 另一种结局",
+      "note": "同一报纸七天后刊出综述，称舰队已分批返回 Brest。未明确点名撤回此前 Boyd 消息，因此不标成正式更正。",
+      "excerpt": "Of the intelligence brought by the late arrivals, the most important relates to the French expedition against Ireland. We have collected under this head, every interesting detail we have been able to meet with. By comparing the various accounts, it appears, that the French force when it failed from Brest, consisted of about 50 sail, including transports, of which 17 were of the line, and had on board 25,000 men.—They failed in three divisions, under the command of De Galles, Bouvet and Neuilly; the land troops under the command of general Hoche. They had scarcely left the port when bad weather dispersed them. Chief part of the fleet however rendezvoused at Bantry Bay, but the frigate la Fraternite, on board of which were the commanders of the fleet and land forces, not joining the fleet, after some delay left the Bay, without molestation, except by the wind, and by the best and latest accounts, reached Brest, in divisions without material loss. The expedition appears to have been planned on a large scale. The Toulon fleet which came round to l'Orient, and the armament at Dunkirk were probably to co-operate. Notwithstanding the above failure, the French appear still to have an expedition to Ireland in contemplation.",
+      "excerpt_source": "RevX; whitespace normalized, OCR errors retained and noted",
+      "scan_checked": true,
+      "scan_url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810/resolve/0b97906ad32e269376872934820357fc333151d8/media/sn82014782/1797-04-19_1_2.pdf?download=true",
+      "source_url": "https://www.loc.gov/item/sn82014782/1797-04-19/ed-1/",
+      "sha256": "39668797820ced122f8e607afa6d3c5467eb30032c25aec1396c0ffb3252d77c",
+      "relation_id": null
+    },
+    {
+      "id": "H012",
+      "family": "F2",
+      "date": "1797-05-18",
+      "paper": "Gazette of the United States, & Philadelphia daily advertiser.",
+      "lccn": "sn83025881",
+      "page": 3,
+      "key": "sn83025881|1797-05-18|1|3",
+      "kind": "Peace 号扣船报道 · 版本 A",
+      "note": "报道归于 Maria 号船长 Whitney 的消息。25000 是报道中的美元金额；未用港口或司法档案独立核实损失。",
+      "excerpt": "Thursday evening arrived the brig Maria, capt. Whitney, in 34 days from Cayenne. By him we are advised of the seizure and prompt condemnation of the brig Peace, capt. Samuel Allen, of this port; vessel, cargo, and specie on board, valued at 25,000 dollars. Capt. Allen was from Dover, bound for Surinam, but touched at Cayenne, where he had been several days before the seizure was made. The pretext was, his being from an English port.",
+      "excerpt_source": "RevX; whitespace normalized, OCR errors retained and noted",
+      "scan_checked": true,
+      "scan_url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810/resolve/0b97906ad32e269376872934820357fc333151d8/media/sn83025881/1797-05-18_1_3.pdf?download=true",
+      "source_url": "https://www.loc.gov/item/sn83025881/1797-05-18/ed-1/",
+      "sha256": "44edfd1da8a3fb994047268188219e58555f5241340e0238ce1d960b2055ccfb",
+      "relation_id": null
+    },
+    {
+      "id": "X016",
+      "family": "F2",
+      "date": "1797-05-30",
+      "paper": "The New Hampshire gazette",
+      "lccn": "sn83025588",
+      "page": 1,
+      "key": "sn83025588|1797-05-30|1|1",
+      "kind": "Peace 号扣船报道 · 版本 B",
+      "note": "与 H012 有对应核心段落，并多出关于现金与汇票的括号注释，署名 Mercury。增加的内容尚未独立验证；不推定 H012→本报。",
+      "excerpt": "Thursday evening arrived the brig Maria, Capt. Whitney, in 34 days from Cayenne. By him we are advised of the seizure and prompt condemnation of the brig Peace, Capt. Samuel Allen, of this Port; vessel, cargo and specie on board, valued at 25000 dollars. Capt. Allen was from Dover, bound for Surinam, but touched at Cayenne, where he had been several days before the seizure was made. The pretext was, his being from an English port. [We are respectably informed that as some specie which had been on board of the above vessel, was missing at the time of capture, the Capt. having purchased certain articles and remitted them to his owner, they obliged him to draw a bill on his Employer for the amount so remitted. [Mercury.]",
+      "excerpt_source": "RevX; whitespace normalized, OCR errors retained and noted",
+      "scan_checked": true,
+      "scan_url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810/resolve/0b97906ad32e269376872934820357fc333151d8/media/sn83025588/1797-05-30_1_1.pdf?download=true",
+      "source_url": "https://www.loc.gov/item/sn83025588/1797-05-30/ed-1/",
+      "sha256": "7927835d2e62177edeccdf4b1783b0251636ec61388fed5283574cf6219a1af2",
+      "relation_id": null
+    },
+    {
+      "id": "H013",
+      "family": "F2",
+      "date": "1797-06-27",
+      "paper": "The New Hampshire gazette",
+      "lccn": "sn83025588",
+      "page": 3,
+      "key": "sn83025588|1797-06-27|1|3",
+      "kind": "卡宴法令译文 + 编辑指控",
+      "note": "后附评论称所引事例八条中七条虚假，却未在该处逐条列证。记录为“失实指控”，不录入已证实的假新闻数；原始卡宴报和被引八条消息仍缺失。",
+      "excerpt": "It is easy to perceive, that the American papers, cited in this decree, are the Jacobin Gazettes of the United States, and that the instances quoted, are seven out of eight, false and scandalous. It is also very evident, that the French Agents, in the United States, have published those very accounts in the Aurora , Argus , Chronicle , and other hiring papers, merely to give a pretext to the plunderers in the West-Indies, to seize and confiscate American vessels, and that the Printers of them have been base and sordid enough to send them those papers, in order that they may be adduced as documents, to justify their infamy! The American merchants and seamen, who suffer under the piracies in the West-Indies, now look to those Printers as the Authors of their misery; and were they to prosecute for reparation, an honest jury would do no less than grant a verdict in their favor.",
+      "excerpt_source": "RevX; whitespace normalized, OCR errors retained and noted",
+      "scan_checked": true,
+      "scan_url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810/resolve/0b97906ad32e269376872934820357fc333151d8/media/sn83025588/1797-06-27_1_3.pdf?download=true",
+      "source_url": "https://www.loc.gov/item/sn83025588/1797-06-27/ed-1/",
+      "sha256": "88675815129b2c9a2875a4fdbe6c1a518ff0c757530908cd9915206057fcaf86",
+      "relation_id": "R08"
+    },
+    {
+      "id": "H017",
+      "family": "F3",
+      "date": "1794-05-19",
+      "paper": "The Mirrour",
+      "lccn": "sn83025523",
+      "page": 2,
+      "key": "sn83025523|1794-05-19|1|2",
+      "kind": "放行决议 · 摘录版本",
+      "note": "保留已经装载、美国公民所有、驶往好望角以远及提供担保等条件。缩写 United States 为 U. S. 不构成实质篡改。",
+      "excerpt": "On the 7th inst. it was Resolved, by Congress, That the President of the U. S. be authorized to direct clearances to be granted to any ship or vessel, belonging to citizens of the U. S. which are now loaded, bound from any port in the U. S. for any port beyond the Cape of Good Hope; any thing in the resolution for laying the embargo, to the contrary notwithstanding: Provided, That before the collector of either of the districts of the U. S. shall grant clearances, or any such vessel shall sail, the owners thereof shall give sufficient security to the satisfaction of such collector, that she shall not unload her cargo, or any part thereof, at any port or place previous to her arrival at the Cape of Good Hope.",
+      "excerpt_source": "RevX; whitespace normalized, OCR errors retained and noted",
+      "scan_checked": true,
+      "scan_url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810/resolve/0b97906ad32e269376872934820357fc333151d8/media/sn83025523/1794-05-19_1_2.pdf?download=true",
+      "source_url": "https://www.loc.gov/item/sn83025523/1794-05-19/ed-1/",
+      "sha256": "f65dbd9d7aad3142cb3d056eccf95fa579f4acf5da190bfd5f7ae5c1d4e73253",
+      "relation_id": null
+    },
+    {
+      "id": "H019",
+      "family": "F3",
+      "date": "1794-05-20",
+      "paper": "The New Hampshire gazette",
+      "lccn": "sn83025588",
+      "page": 3,
+      "key": "sn83025588|1794-05-20|1|3",
+      "kind": "放行决议 · 带批准日期的版本",
+      "note": "包括 May 7, 1794 与 Washington 批准信息。已与《Statutes at Large》第1卷第401页决议 V 对照；核对的是条文，不是执行成效。",
+      "excerpt": "The following Resolution passed both Houses, and was signed by the President this day.— Resolved, That the President of the United States be authorized to direct clearances to be granted to any ship or vessel, belonging to citizens of the United States, which are now loaded, bound from any port in the United States, for any port beyond the Cape of Good Hope; any thing in the resolution for laying the Embargo, to the contrary notwithstanding: Provided , That before the Collector of either of the districts of the United States, shall grant clearances, or any such vessel shall sail, the owners thereof shall give sufficient security to the satisfaction of such collector, that she shall not unlade her cargo, or any part thereof, at any port or place, previous to her arrival at the Cape of Good Hope. Approved, May 7, 1794. GEO. WASHINGTON, President of the United States.",
+      "excerpt_source": "RevX; whitespace normalized, OCR errors retained and noted",
+      "scan_checked": true,
+      "scan_url": "https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810/resolve/0b97906ad32e269376872934820357fc333151d8/media/sn83025588/1794-05-20_1_3.pdf?download=true",
+      "source_url": "https://www.loc.gov/item/sn83025588/1794-05-20/ed-1/",
+      "sha256": "3324b7c81b55fffa8539857895a74237d8712088f9c1d7a4e48b3d67fb23b5af",
+      "relation_id": "R03"
+    }
+  ],
+  "claims": [
+    {
+      "id": "Q01",
+      "family": "F1",
+      "statement": "17艘法国船只被报道在 Bantry Bay。",
+      "versions": [
+        "H001",
+        "H002",
+        "H006"
+      ],
+      "kind": "reported_fact",
+      "status": "未独立核对",
+      "note": ""
+    },
+    {
+      "id": "Q02",
+      "family": "F1",
+      "statement": "多数船只被报道桅杆受损（dismasted）。",
+      "versions": [
+        "H001",
+        "H002",
+        "H006"
+      ],
+      "kind": "reported_fact",
+      "status": "未独立核对",
+      "note": "H001 的 distressed 是转写错误；三份原报相关词均核对。"
+    },
+    {
+      "id": "Q03",
+      "family": "F1",
+      "statement": "上岸者被报道遭俘并送往／前往 Dublin。",
+      "versions": [
+        "H001",
+        "H002",
+        "H006"
+      ],
+      "kind": "reported_fact",
+      "status": "未独立核对",
+      "note": "went / sent 是印刷版本差异；未据此判断实际拘押过程。"
+    },
+    {
+      "id": "Q04",
+      "family": "F1",
+      "statement": "作者断言整支队伍必将被俘。",
+      "versions": [
+        "H001",
+        "H002",
+        "H006"
+      ],
+      "kind": "prediction",
+      "status": "预测，不按已发生事实计分",
+      "note": "must inevitably be captured 是对未来的断言，不能读作已经全体被俘。"
+    },
+    {
+      "id": "Q05",
+      "family": "F1",
+      "statement": "船队被报道原拟在 Londonderry 登陆。",
+      "versions": [
+        "H001",
+        "H002",
+        "H006"
+      ],
+      "kind": "reported_fact",
+      "status": "未独立核对",
+      "note": ""
+    },
+    {
+      "id": "Q06",
+      "family": "F1",
+      "statement": "CHRONICLE 对消息的时间、路线与人数提出质疑。",
+      "versions": [
+        "H002"
+      ],
+      "kind": "challenge",
+      "status": "已记录质疑；不等于证伪",
+      "note": ""
+    },
+    {
+      "id": "Q07",
+      "family": "F1",
+      "statement": "后续综述称舰队分批返回 Brest，未遭重大损失。",
+      "versions": [
+        "H007"
+      ],
+      "kind": "reported_fact",
+      "status": "未独立核对",
+      "note": "这是后续报道内容；未作为独立历史定论。"
+    },
+    {
+      "id": "Q08",
+      "family": "F2",
+      "statement": "Peace号船舶、货物与现金被报道遭没收，总值25000美元。",
+      "versions": [
+        "H012",
+        "X016"
+      ],
+      "kind": "reported_fact",
+      "status": "未独立核对",
+      "note": ""
+    },
+    {
+      "id": "Q09",
+      "family": "F2",
+      "statement": "扣船理由被报道为来自英国港口。",
+      "versions": [
+        "H012",
+        "X016"
+      ],
+      "kind": "reported_fact",
+      "status": "未独立核对",
+      "note": ""
+    },
+    {
+      "id": "Q10",
+      "family": "F2",
+      "statement": "刊载的卡宴法令译文援引美国报纸消息。",
+      "versions": [
+        "H013"
+      ],
+      "kind": "reported_fact",
+      "status": "未独立核对",
+      "note": "原始法令与被引报纸逐条对应尚缺；此前 R08 已核对译文扫描。"
+    },
+    {
+      "id": "Q11",
+      "family": "F2",
+      "statement": "刊载译文命令拿捕往来英国港口等情形下的美国船只。",
+      "versions": [
+        "H013"
+      ],
+      "kind": "reported_fact",
+      "status": "未独立核对",
+      "note": "不自动把 Peace 号案件解释为该法令的已证实执行案例。"
+    },
+    {
+      "id": "Q12",
+      "family": "F2",
+      "statement": "附注指控引用的事例八条中七条虚假，并指控政治操纵。",
+      "versions": [
+        "H013"
+      ],
+      "kind": "accusation",
+      "status": "失实指控；尚无逐条核验",
+      "note": "不能把 7/8 转为本研究的87.5%失实率。"
+    },
+    {
+      "id": "Q13",
+      "family": "F3",
+      "statement": "该放行决议的批准日期为1794年5月7日。",
+      "versions": [
+        "H017",
+        "H019"
+      ],
+      "kind": "reported_fact",
+      "status": "已外部核对：文件条文",
+      "note": "对照美国《Statutes at Large》vol.1 p.401 Resolution V；不证明政策实施或问题解决。"
+    },
+    {
+      "id": "Q14",
+      "family": "F3",
+      "statement": "决议允许为已经装载、美国公民所有且驶往好望角以远的船只办理放行。",
+      "versions": [
+        "H017",
+        "H019"
+      ],
+      "kind": "reported_fact",
+      "status": "已外部核对：文件条文",
+      "note": "对照美国《Statutes at Large》vol.1 p.401 Resolution V；不证明政策实施或问题解决。"
+    },
+    {
+      "id": "Q15",
+      "family": "F3",
+      "statement": "船主须提供担保，保证到达好望角前不卸货。",
+      "versions": [
+        "H017",
+        "H019"
+      ],
+      "kind": "reported_fact",
+      "status": "已外部核对：文件条文",
+      "note": "对照美国《Statutes at Large》vol.1 p.401 Resolution V；不证明政策实施或问题解决。"
+    }
+  ],
+  "relations": [
+    {
+      "id": "L01",
+      "a": "H001",
+      "b": "H002",
+      "type": "matched_text",
+      "directed": false,
+      "note": "核心段落相符；后者附质疑。共同来源与直接转载无法区分。"
+    },
+    {
+      "id": "L02",
+      "a": "H002",
+      "b": "H006",
+      "type": "matched_text",
+      "directed": false,
+      "note": "核心段落相符；前者有 CHRONICLE 注释。没有证据表明后者删除了前者注释。"
+    },
+    {
+      "id": "L03",
+      "a": "H012",
+      "b": "X016",
+      "type": "matched_text",
+      "directed": false,
+      "note": "Peace 号报道对应；后者有署名 Mercury 的额外说明。"
+    },
+    {
+      "id": "L04",
+      "a": "H017",
+      "b": "H019",
+      "type": "same_document",
+      "directed": false,
+      "note": "同一份放行决议，两种刊载形式；不确定直接转载方向。"
+    },
+    {
+      "id": "L05",
+      "a": "H006",
+      "b": "H007",
+      "type": "later_account",
+      "directed": false,
+      "note": "同一报纸七天后的不同结局报道；不是已识别的明确更正。"
+    },
+    {
+      "id": "L06",
+      "a": "X016",
+      "b": "H013",
+      "type": "context_only",
+      "directed": false,
+      "note": "地点与政策内容相关；不足以证明此案依据此法令执行。"
+    }
+  ],
+  "metrics": [
+    {
+      "title": "可对照的消息组",
+      "value": "3组",
+      "detail": "Boyd消息3版、Peace号报道2版、放行决议2版。按相邻刊载日期选4对作文本比较；不是4条已证明的转载路线。"
+    },
+    {
+      "title": "附质疑的Boyd版本",
+      "value": "1 / 3",
+      "detail": "只描述本轮检出的三版。没有直接转载父子关系，不把另外两版算作“删去质疑”。"
+    },
+    {
+      "title": "外部核对的条文主张",
+      "value": "3项",
+      "detail": "仅 Q13–Q15，与法令汇编对照；不推算总体真实率。"
+    },
+    {
+      "title": "假新闻率 / 更正覆盖率",
+      "value": "暂不可估计",
+      "detail": "缺少代表性抽样、逐项独立核验及完整追踪窗口。未知保留为未知，不记作0。"
+    }
+  ],
+  "candidate_dispositions": [
+    {
+      "id": "H001",
+      "family": "F1",
+      "date": "1797-03-16",
+      "paper": "The Patowmac guardian, and Berkeley advertiser",
+      "page": 3,
+      "key": "sn84038410|1797-03-16|1|3",
+      "scan_checked": true,
+      "disposition": "纳入细读与扫描核查"
+    },
+    {
+      "id": "H002",
+      "family": "F1",
+      "date": "1797-03-25",
+      "paper": "The New Hampshire gazette",
+      "page": 2,
+      "key": "sn83025588|1797-03-25|1|2",
+      "scan_checked": true,
+      "disposition": "纳入细读与扫描核查"
+    },
+    {
+      "id": "H003",
+      "family": "F1",
+      "date": "1797-03-25",
+      "paper": "The New Hampshire gazette",
+      "page": 3,
+      "key": "sn83025588|1797-03-25|1|3",
+      "scan_checked": false,
+      "disposition": "保留为事件背景：同日另一页的官方来信，与 Boyd 段落不是同一消息版本。"
+    },
+    {
+      "id": "H004",
+      "family": "F1",
+      "date": "1797-03-30",
+      "paper": "The Patowmac guardian, and Berkeley advertiser",
+      "page": 3,
+      "key": "sn84038410|1797-03-30|1|3",
+      "scan_checked": false,
+      "disposition": "保留为事件背景：另一份船员／舰队记述，未作同文版本。"
+    },
+    {
+      "id": "H005",
+      "family": "F1",
+      "date": "1797-04-01",
+      "paper": "The New Hampshire gazette",
+      "page": 3,
+      "key": "sn83025588|1797-04-01|1|3",
+      "scan_checked": false,
+      "disposition": "保留为事件背景：归航清单与推测，未作同文版本。"
+    },
+    {
+      "id": "H006",
+      "family": "F1",
+      "date": "1797-04-12",
+      "paper": "The Kentucky gazette",
+      "page": 3,
+      "key": "sn82014782|1797-04-12|1|3",
+      "scan_checked": true,
+      "disposition": "纳入细读与扫描核查"
+    },
+    {
+      "id": "H007",
+      "family": "F1",
+      "date": "1797-04-19",
+      "paper": "The Kentucky gazette",
+      "page": 2,
+      "key": "sn82014782|1797-04-19|1|2",
+      "scan_checked": true,
+      "disposition": "纳入细读与扫描核查"
+    },
+    {
+      "id": "H008",
+      "family": "F1",
+      "date": "1797-05-18",
+      "paper": "Gazette of the United States, & Philadelphia daily advertiser.",
+      "page": 4,
+      "key": "sn83025881|1797-05-18|1|4",
+      "scan_checked": false,
+      "disposition": "排除：Bantryne 商号名字命中，不是 Bantry 事件。"
+    },
+    {
+      "id": "H009",
+      "family": "F1",
+      "date": "1797-06-07",
+      "paper": "Gazette of the United States, & Philadelphia daily advertiser.",
+      "page": 3,
+      "key": "sn83025881|1797-06-07|1|3",
+      "scan_checked": false,
+      "disposition": "排除：不同航运条目中的 Ireland 与 Boyd 相邻。"
+    },
+    {
+      "id": "H010",
+      "family": "F1",
+      "date": "1797-06-13",
+      "paper": "Gazette of the United States, & Philadelphia daily advertiser.",
+      "page": 2,
+      "key": "sn83025881|1797-06-13|1|2",
+      "scan_checked": false,
+      "disposition": "排除：金融报道中同名 Boyd 与 Ireland 相邻。"
+    },
+    {
+      "id": "H011",
+      "family": "F2",
+      "date": "1797-02-18",
+      "paper": "The Kentucky gazette",
+      "page": 2,
+      "key": "sn82014782|1797-02-18|1|2",
+      "scan_checked": false,
+      "disposition": "排除：CA 文本混入相邻消息，不能对应目标法令。"
+    },
+    {
+      "id": "H012",
+      "family": "F2",
+      "date": "1797-05-18",
+      "paper": "Gazette of the United States, & Philadelphia daily advertiser.",
+      "page": 3,
+      "key": "sn83025881|1797-05-18|1|3",
+      "scan_checked": true,
+      "disposition": "纳入细读与扫描核查"
+    },
+    {
+      "id": "H013",
+      "family": "F2",
+      "date": "1797-06-27",
+      "paper": "The New Hampshire gazette",
+      "page": 3,
+      "key": "sn83025588|1797-06-27|1|3",
+      "scan_checked": true,
+      "disposition": "纳入细读与扫描核查"
+    },
+    {
+      "id": "H014",
+      "family": "F2",
+      "date": "1797-09-03",
+      "paper": "Gazette of the United States, & Philadelphia daily advertiser.",
+      "page": 3,
+      "key": "sn83025881|1797-09-03|1|3",
+      "scan_checked": false,
+      "disposition": "保留为背景：另一份免职法令，未证明与目标法令有因果关系。"
+    },
+    {
+      "id": "H015",
+      "family": "F3",
+      "date": "1794-05-12",
+      "paper": "Gazette of the United States & evening advertiser.",
+      "page": 2,
+      "key": "sn83025878|1794-05-12|1|2",
+      "scan_checked": false,
+      "disposition": "保留为文件背景：参议院程序记录，非完整决议转载。"
+    },
+    {
+      "id": "H016",
+      "family": "F3",
+      "date": "1794-05-12",
+      "paper": "Gazette of the United States & evening advertiser.",
+      "page": 3,
+      "key": "sn83025878|1794-05-12|1|3",
+      "scan_checked": false,
+      "disposition": "保留为文件背景：参议院程序记录，非完整决议转载。"
+    },
+    {
+      "id": "H017",
+      "family": "F3",
+      "date": "1794-05-19",
+      "paper": "The Mirrour",
+      "page": 2,
+      "key": "sn83025523|1794-05-19|1|2",
+      "scan_checked": true,
+      "disposition": "纳入细读与扫描核查"
+    },
+    {
+      "id": "H018",
+      "family": "F3",
+      "date": "1794-05-19",
+      "paper": "Gazette of the United States & evening advertiser.",
+      "page": 2,
+      "key": "sn83025878|1794-05-19|1|2",
+      "scan_checked": false,
+      "disposition": "保留为文件背景：签署程序记录，非完整决议转载。"
+    },
+    {
+      "id": "H019",
+      "family": "F3",
+      "date": "1794-05-20",
+      "paper": "The New Hampshire gazette",
+      "page": 3,
+      "key": "sn83025588|1794-05-20|1|3",
+      "scan_checked": true,
+      "disposition": "纳入细读与扫描核查"
+    },
+    {
+      "id": "H020",
+      "family": "F3",
+      "date": "1794-06-02",
+      "paper": "The Mirrour",
+      "page": 3,
+      "key": "sn83025523|1794-06-02|1|3",
+      "scan_checked": false,
+      "disposition": "排除：好望角航运与其他放行报道相邻。"
+    },
+    {
+      "id": "X001",
+      "family": "F1",
+      "date": "1797-02-16",
+      "paper": "Gazette of the United States, & Philadelphia daily advertiser.",
+      "page": 3,
+      "key": "sn83025881|1797-02-16|1|3",
+      "scan_checked": false,
+      "disposition": "排除：航运清单中同名 Boyd，未对应目标消息。"
+    },
+    {
+      "id": "X008",
+      "family": "F1",
+      "date": "1797-04-13",
+      "paper": "The Patowmac guardian, and Berkeley advertiser",
+      "page": 3,
+      "key": "sn84038410|1797-04-13|1|3",
+      "scan_checked": false,
+      "disposition": "排除：地方选举中 Boyd 的争执及更正，不是舰队消息；不能合并同名人物。"
+    },
+    {
+      "id": "X010",
+      "family": "F1",
+      "date": "1797-04-20",
+      "paper": "The Patowmac guardian, and Berkeley advertiser",
+      "page": 2,
+      "key": "sn84038410|1797-04-20|1|2",
+      "scan_checked": false,
+      "disposition": "排除：地方选举 Boyd 与下一则 Liverpool 新闻相邻。"
+    },
+    {
+      "id": "X016",
+      "family": "F2",
+      "date": "1797-05-30",
+      "paper": "The New Hampshire gazette",
+      "page": 1,
+      "key": "sn83025588|1797-05-30|1|1",
+      "scan_checked": true,
+      "disposition": "纳入细读与扫描核查"
+    }
+  ],
+  "external_sources": [
+    {
+      "id": "S1",
+      "title": "United States Statutes at Large, vol.1, p.401, Resolution V",
+      "url": "https://tile.loc.gov/storage-services/service/ll/llsl/llsl-c3/llsl-c3.pdf#page=61",
+      "scope": "May 7, 1794 resolution; three provisions compared; no implementation claim"
+    }
+  ],
+  "review": {
+    "scan_checked_pages": 9,
+    "new_pdf_pages": 6,
+    "reviewer": "Codex-assisted reading; no independent second reviewer",
+    "normalization": "Whitespace and broken-line normalization for matching; OCR differences are retained in excerpts and separately annotated.",
+    "status": "Bounded feasibility pilot; not population estimates or validated causal graph"
+  }
+}
