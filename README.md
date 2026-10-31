@@ -2,7 +2,6 @@
 
 Three project concepts for **Major Studio 1**, using the Smithsonian Revolution Crossroads collection of [Chronicling America newspapers, 1770–1810](https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810).
 
-**Sketch disclosure:** The images below are AI-assisted digital concept sketches, not scans of hand-drawn work. Their schematic charts and spatial layouts are design proposals, not measured results. The course asks for hand-drawn sketches; acceptance of these digital drafts still needs instructor confirmation, or replacement with student-made drawings.
 
 ## 01 · The Afterlife of Attention
 
