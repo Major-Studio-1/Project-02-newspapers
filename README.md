@@ -58,6 +58,12 @@ Historical events rarely appear in isolation: a seizure may become a commercial 
 
 **Current recommendation:** Develop **News in Transit** as the most bounded empirical study, and use the **Event Telescope** as its exploration interface. Keep the attention hypothesis as a longer-term research question until coverage and outcome tracking are stronger. The concepts remain alternatives for critique, not three simultaneous full builds.
 
+## Earlier English analysis report
+
+The complete earlier report, **How newspaper attention rises, persists, and returns**, is now available in [`reports/`](reports/). It covers the full dataset audit, exploratory topic trends, all 24 candidate topics, supporting newspaper passages, and methods and limitations.
+
+**[Read the complete report on GitHub](reports/attention_pilot_report.md)** · [Original standalone HTML](reports/attention_pilot_report.html) · [Report files and download instructions](reports/README.md)
+
 ## Data, provenance, and limits
 
 - Fixed dataset revision: `0b97906ad32e269376872934820357fc333151d8`.

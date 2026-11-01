@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "checks": [
+    "All 77,793 source rows reconcile by year and newspaper series.",
+    "Eligibility counts reconcile; expansion weights recover eligible page population.",
+    "All 41 years have 24 topic estimates; annual and coarse-period shares plus unassigned mass sum to one.",
+    "Topic mixtures normalize; page and passage word totals reconcile.",
+    "Each component has at least three supporting excerpts with source links."
+  ],
+  "dataset_revision": "0b97906ad32e269376872934820357fc333151d8",
+  "verified_source_files": [
+    {
+      "path": "data/train-00000-of-00006.parquet",
+      "bytes": 272905576,
+      "sha256": "c6f4ed4b4b87742689bdc46924a3072031036a9605013529d6f3868e35b068bb"
+    },
+    {
+      "path": "data/train-00001-of-00006.parquet",
+      "bytes": 271372970,
+      "sha256": "9e4968f102f13bc3b1c029eeb97d05d5fb1479017837572ecfffd415d4676b24"
+    },
+    {
+      "path": "data/train-00002-of-00006.parquet",
+      "bytes": 327030099,
+      "sha256": "a9f52692c4fa3ada3016d84826d6686cc7b3d7089db91c72486e320927451598"
+    },
+    {
+      "path": "data/train-00003-of-00006.parquet",
+      "bytes": 301436910,
+      "sha256": "66d8f7c61b5c0460db24e80afd312d2bc68ed8cf8b2378499de823e346a4681a"
+    },
+    {
+      "path": "data/train-00004-of-00006.parquet",
+      "bytes": 387328290,
+      "sha256": "bd5c984bc980b9ef70d270c51db2f0674b8321ec4748374585ff0b056e33f3e9"
+    },
+    {
+      "path": "data/train-00005-of-00006.parquet",
+      "bytes": 298529574,
+      "sha256": "68cfc4c7305a7d7931b4fd44d3b9ca115b06c3f024cbbc0c332877e3cfcee8cb"
+    }
+  ]
+}
