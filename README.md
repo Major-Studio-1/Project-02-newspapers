@@ -1,6 +1,6 @@
 # Project 02 — Newspapers, Attention, and Connected Events
 
-> **The finished project is Newspaper Night Sky:** [open the website](https://major-studio-1.github.io/Project-02-newspaper-night-sky/) · [repository](https://github.com/Major-Studio-1/Project-02-newspaper-night-sky). This repository keeps the proposal as submitted on 1 November 2026.
+> **The finished project is Newspaper Night Sky:** [open the website](https://newspapers.icare.love/) · [repository](https://github.com/Major-Studio-1/Project-02-newspaper-night-sky). This repository keeps the proposal as submitted on 1 November 2026.
 
 Three project concepts for **Major Studio 1**, using the Smithsonian Revolution Crossroads collection of [Chronicling America newspapers, 1770–1810](https://huggingface.co/datasets/RevolutionCrossroads/loc_chronicling_america_1770-1810).
 
